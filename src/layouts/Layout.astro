@@ -1,0 +1,108 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Z NACELLES | Nacelliste Professionnel">
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Z NACELLES">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <slot />
+
+  <script>
+    // Navbar scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav?.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger?.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      navLinks?.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(navLinks?.classList.contains('open')));
+    });
+    navLinks?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger?.classList.remove('open');
+        navLinks?.classList.remove('open');
+        burger?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Smooth scroll with offset
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href')!);
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Scroll reveal
+    const srElements = document.querySelectorAll('.sr');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    srElements.forEach(el => observer.observe(el));
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop?.classList.toggle('show', window.scrollY > 500);
+    }, { passive: true });
+    toTop?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Contact form
+    document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.target as HTMLFormElement;
+      const btn = form.querySelector('.form-btn') as HTMLButtonElement;
+      btn.textContent = '✓ Envoyé';
+      btn.style.background = '#25d366';
+      setTimeout(() => {
+        btn.textContent = 'Envoyer';
+        btn.style.background = '';
+        form.reset();
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
