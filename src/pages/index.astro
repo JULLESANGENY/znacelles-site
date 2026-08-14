@@ -48,7 +48,7 @@ import ZLogo from '../components/ZLogo.astro';
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="tel:+33767341655" class="btn btn-secondary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             07 67 34 16 55
           </a>
         </div>
@@ -215,32 +215,44 @@ import ZLogo from '../components/ZLogo.astro';
         <div class="section-label">Coordonnées</div>
         <h2 class="section-title">Contact Direct</h2>
         <p class="section-desc">
-          Une question, une urgence ou un devis d'intervention ? Contactez-moi par téléphone ou via le formulaire.
+          Une question, une urgence ou un devis d'intervention ? Envoyez votre demande, elle arrive directement sur ma boîte mail.
         </p>
       </div>
 
       <div class="contact-grid">
-        <!-- Form -->
-        <form class="contact-form sr" id="contactForm" aria-label="Formulaire de contact">
+        <!-- Live Form via FormSubmit -->
+        <form
+          class="contact-form sr"
+          id="contactForm"
+          action="https://formsubmit.co/ajax/z.nacelles@gmail.com"
+          method="POST"
+          aria-label="Formulaire de contact"
+        >
+          <!-- Anti-spam & Configuration -->
+          <input type="hidden" name="_subject" value="Nouveau message depuis le site Z NACELLES" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+
           <div class="field">
-            <label for="name">Nom / Société</label>
-            <input type="text" id="name" placeholder="Votre nom ou entreprise" required autocomplete="name" />
+            <label for="name">Nom / Société *</label>
+            <input type="text" id="name" name="nom_ou_societe" placeholder="Votre nom ou entreprise" required autocomplete="name" />
           </div>
           <div class="field">
-            <label for="email">Adresse Email</label>
-            <input type="email" id="email" placeholder="votre@email.com" required autocomplete="email" />
+            <label for="email">Adresse Email *</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required autocomplete="email" />
           </div>
           <div class="field">
-            <label for="phone">Téléphone</label>
-            <input type="tel" id="phone" placeholder="06 00 00 00 00" autocomplete="tel" />
+            <label for="phone">Téléphone *</label>
+            <input type="tel" id="phone" name="telephone" placeholder="06 00 00 00 00" required autocomplete="tel" />
           </div>
           <div class="field">
-            <label for="message">Détails de l'intervention</label>
-            <textarea id="message" placeholder="Type de travaux, hauteur estimée, lieu, dates souhaitées..." required></textarea>
+            <label for="message">Détails de l'intervention *</label>
+            <textarea id="message" name="message" placeholder="Type de travaux, hauteur estimée, lieu, dates souhaitées..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%; justify-content: center;">
             Envoyer ma demande
           </button>
+          <div id="formStatus" style="display: none; padding: 14px; border-radius: 6px; font-size: 0.92rem; text-align: center; margin-top: 6px; line-height: 1.5;"></div>
         </form>
 
         <!-- Coordinates Stack -->
