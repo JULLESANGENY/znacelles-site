@@ -22,22 +22,22 @@ const { title, description } = Astro.props;
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Z NACELLES">
 
-  <!-- Fonts -->
+  <!-- Google Fonts matching card identity -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <slot />
 
   <script>
-    // Navbar scroll
+    // Navbar scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      nav?.classList.toggle('scrolled', window.scrollY > 60);
+      nav?.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // Burger menu
+    // Burger menu toggle
     const burger = document.getElementById('burger');
     const navLinks = document.getElementById('navLinks');
     burger?.addEventListener('click', () => {
@@ -53,19 +53,22 @@ const { title, description } = Astro.props;
       });
     });
 
-    // Smooth scroll with offset
+    // Smooth scroll with offset for fixed header
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
-        const target = document.querySelector(a.getAttribute('href')!);
-        if (target) {
-          e.preventDefault();
-          const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
-          window.scrollTo({ top, behavior: 'smooth' });
+        const href = a.getAttribute('href');
+        if (href && href !== '#') {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
         }
       });
     });
 
-    // Scroll reveal
+    // Scroll reveal observer
     const srElements = document.querySelectorAll('.sr');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -74,30 +77,31 @@ const { title, description } = Astro.props;
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     srElements.forEach(el => observer.observe(el));
 
-    // Back to top
+    // Back to top button
     const toTop = document.getElementById('toTop');
     window.addEventListener('scroll', () => {
-      toTop?.classList.toggle('show', window.scrollY > 500);
+      toTop?.classList.toggle('show', window.scrollY > 450);
     }, { passive: true });
     toTop?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Contact form
+    // Contact form confirmation
     document.getElementById('contactForm')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const form = e.target as HTMLFormElement;
-      const btn = form.querySelector('.form-btn') as HTMLButtonElement;
-      btn.textContent = '✓ Envoyé';
+      const btn = form.querySelector('.btn-primary') as HTMLButtonElement;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '✓ Message Envoyé';
       btn.style.background = '#25d366';
       setTimeout(() => {
-        btn.textContent = 'Envoyer';
+        btn.innerHTML = originalText;
         btn.style.background = '';
         form.reset();
-      }, 2500);
+      }, 3000);
     });
   </script>
 </body>

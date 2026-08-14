@@ -1,0 +1,72 @@
+---
+export interface Props {
+  className?: string;
+  width?: number;
+  height?: number;
+}
+
+const { className = "brand-emblem", width = 42, height = 42 } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 100 65"
+  width={width}
+  height={height}
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Multi-chromatic Holographic Gradient as seen on the physical card -->
+    <linearGradient id="zHoloGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" />
+      <stop offset="25%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="70%" stop-color="#a3e635" />
+      <stop offset="85%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <linearGradient id="zBladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" />
+      <stop offset="40%" stop-color="#38bdf8" />
+      <stop offset="80%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <filter id="zGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Top Blade -->
+  <path
+    d="M 28 8 L 96 8 C 85 14, 70 20, 48 24 L 66 24 C 52 30, 40 33, 22 35 L 56 16 L 36 16 Z"
+    fill="url(#zBladeGrad)"
+    opacity="0.95"
+  />
+
+  <!-- Main Z Dynamic Body with Hologram Gradient -->
+  <path
+    d="M 38 4 L 98 4 C 74 15, 52 24, 32 36 L 94 36 L 90 44 L 6 44 C 28 32, 50 23, 70 12 L 24 12 Z"
+    fill="url(#zHoloGrad)"
+    filter="url(#zGlow)"
+  />
+
+  <!-- Lower Aerodynamic Fin -->
+  <path
+    d="M 6 44 L 75 44 C 62 49, 48 54, 30 58 L 50 58 C 36 62, 22 64, 8 64 L 38 48 L 18 48 Z"
+    fill="url(#zBladeGrad)"
+    opacity="0.85"
+  />
+
+  <!-- Sharp Specular Highlight line -->
+  <path
+    d="M 38 5 L 94 5 L 34 37 L 88 37"
+    stroke="#ffffff"
+    stroke-width="1.2"
+    stroke-linecap="round"
+    opacity="0.8"
+  />
+</svg>

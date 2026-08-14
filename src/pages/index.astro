@@ -1,20 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ZLogo from '../components/ZLogo.astro';
 ---
 
 <Layout
-  title="Z NACELLES | Nacelliste Professionnel — Mérignac (33) | Toute la France"
-  description="Z NACELLES, nacelliste professionnel basé à Mérignac (33). Conduite de nacelles élévatrices, habilitations électriques BT/HT, CACES® R486, accès sites nucléaires. Devis gratuit, intervention sur toute la France."
+  title="Z NACELLES | Nacelliste Professionnel — Mérignac (33) | France Entière"
+  description="Z NACELLES — Nacelliste professionnel. Interventions grandes hauteurs, habilitations électriques BT & HT, CACES® PEMP B R486, accès sites nucléaires. Mobilité sur toute la France."
 >
-  <!-- === NAV === -->
+  <!-- === NAVBAR === -->
   <header>
     <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
-      <a href="#hero" class="logo"><span>Z</span> NACELLES</a>
+      <a href="#hero" class="nav-brand" aria-label="Z NACELLES - Accueil">
+        <ZLogo width={36} height={36} className="brand-emblem" />
+        <div class="brand-text-block">
+          <span class="brand-title">Z NACELLES</span>
+          <span class="brand-subtitle">Nacelliste Professionnel</span>
+        </div>
+      </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">À propos</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#certifs">Certifications</a></li>
-        <li><a href="#contact" class="cta-link">Contact</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -23,158 +29,205 @@ import Layout from '../layouts/Layout.astro';
   </header>
 
   <main>
-    <!-- === HERO === -->
+    <!-- === HERO SECTION === -->
     <section class="hero" id="hero">
-      <div class="hero-inner">
-        <h1 class="sr"><span>Z</span> NACELLES</h1>
-        <p class="tagline sr sr-d1">
-          Nacelliste professionnel basé à Mérignac.<br />
-          Conduite de nacelles élévatrices sur toute la France.
+      <div class="hero-container">
+        <div class="hero-logo-box sr">
+          <ZLogo width={110} height={70} className="hero-emblem-large" />
+          <h1 class="hero-brand-name">Z NACELLES</h1>
+          <div class="hero-badge-tag">Nacelliste Professionnel</div>
+        </div>
+
+        <p class="hero-desc sr sr-d1">
+          Solutions sur mesure pour vos travaux en grandes hauteurs. Opérateur qualifié, matériel certifié et mobilité sur l'ensemble du territoire national.
         </p>
-        <div class="hero-buttons sr sr-d2">
-          <a href="#contact" class="btn btn-fill">Demander un devis</a>
-          <a href="#services" class="btn btn-outline">Nos services</a>
+
+        <div class="hero-actions sr sr-d2">
+          <a href="#contact" class="btn btn-primary">
+            Demander un devis
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+33767341655" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            07 67 34 16 55
+          </a>
         </div>
-        <div class="hero-keys sr sr-d3">
-          <div class="hero-key">
-            <div class="label">Certification</div>
-            <div class="value">CACES® R486</div>
+
+        <!-- Contact bar directly from card footer -->
+        <div class="hero-card-strip sr sr-d3">
+          <div class="strip-item">
+            <span>📞</span>
+            <a href="tel:+33767341655">07 67 34 16 55</a>
           </div>
-          <div class="hero-key">
-            <div class="label">Habilitations</div>
-            <div class="value">BT / HT</div>
+          <span class="strip-dot">■</span>
+          <div class="strip-item">
+            <span>✉️</span>
+            <a href="mailto:z.nacelles@gmail.com">z.nacelles@gmail.com</a>
           </div>
-          <div class="hero-key">
-            <div class="label">Zone</div>
-            <div class="value">Toute la France</div>
+          <span class="strip-dot">■</span>
+          <div class="strip-item">
+            <span>📍</span>
+            <span>26 av. Gustave Eiffel, 33700 MÉRIGNAC</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- === ABOUT === -->
-    <section id="about">
-      <div class="about-grid">
-        <div class="section-header sr">
-          <div class="section-label">À propos</div>
-          <h2 class="section-title">Un nacelliste, pas un commercial</h2>
-          <div class="about-text">
-            <p>
-              <strong>Z NACELLES</strong>, c'est avant tout un professionnel du terrain. Basé à Mérignac (33), j'interviens directement sur vos chantiers pour la conduite de nacelles élévatrices.
-            </p>
-            <p>
-              Formé et certifié, j'apporte un savoir-faire concret en travaux en hauteur : maintenance industrielle, chantiers BTP, sites nucléaires, travaux à proximité de lignes électriques. Toutes mes habilitations sont à jour.
-            </p>
-            <p>
-              L'entreprise est récente, mais l'expérience est là. Chaque intervention est réalisée dans le strict respect des normes de sécurité.
-            </p>
+    <!-- === BUSINESS CARD SHOWCASE SECTION === -->
+    <div class="business-card-section sr">
+      <div class="card-showcase-grid">
+        <!-- Front Card Preview -->
+        <div class="card-preview-box card-front">
+          <div>
+            <ZLogo width={80} height={50} className="card-front-emblem" />
+            <div class="card-front-title">Z NACELLES</div>
+            <div class="card-front-sub">NACELLISTE PROFESSIONNEL</div>
           </div>
-          <div class="about-tags">
-            <div class="about-tag"><span class="check">✓</span> CACES® R486</div>
-            <div class="about-tag"><span class="check">✓</span> Habilitations BT/HT</div>
-            <div class="about-tag"><span class="check">✓</span> Accès nucléaire</div>
-            <div class="about-tag"><span class="check">✓</span> Mobilité nationale</div>
+          <div class="card-front-contact">
+            <div>07 67 34 16 55 <span class="sq">■</span> z.nacelles@gmail.com</div>
+            <div>26 av. Gustave Eiffel <span class="sq">■</span> 33700 MÉRIGNAC</div>
           </div>
         </div>
-        <div class="about-photo sr sr-d2" role="img" aria-label="Photo Z NACELLES">
-          <span class="ph-icon">📷</span>
-          <span>Votre photo ici</span>
-        </div>
-      </div>
-    </section>
 
-    <!-- === SERVICES === -->
-    <section id="services">
-      <div class="section-header center sr">
-        <div class="section-label">Services</div>
-        <h2 class="section-title">Ce que je fais</h2>
-        <p class="section-desc">Des prestations claires, un interlocuteur unique, du matériel certifié.</p>
-      </div>
-      <div class="services-grid">
-        <article class="s-card sr sr-d1">
-          <span class="s-icon">🏗️</span>
-          <h3>Travaux en hauteur</h3>
-          <p>Conduite de nacelles pour vos interventions en hauteur : maintenance, pose, inspection, nettoyage.</p>
-        </article>
-        <article class="s-card sr sr-d2">
-          <span class="s-icon">⚡</span>
-          <h3>Habilitations électriques</h3>
-          <p>Habilité BT et HT pour intervenir en toute sécurité à proximité de lignes et installations électriques.</p>
-        </article>
-        <article class="s-card sr sr-d3">
-          <span class="s-icon">📋</span>
-          <h3>CACES® R486</h3>
-          <p>PEMP B (1B-3B) — Conduite certifiée de plateformes élévatrices mobiles. Certification à jour.</p>
-        </article>
-        <article class="s-card sr sr-d4">
-          <span class="s-icon">☢️</span>
-          <h3>Sites nucléaires</h3>
-          <p>Accrédité pour intervenir sur sites sensibles et nucléaires. Protocoles de sécurité renforcés maîtrisés.</p>
-        </article>
-        <article class="s-card sr sr-d5">
-          <span class="s-icon">🚛</span>
-          <h3>Déplacement France entière</h3>
-          <p>Basé en Gironde, je me déplace sur vos chantiers partout en France métropolitaine.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- === CERTIFICATIONS === -->
-    <section id="certifs">
-      <div class="section-header center sr">
-        <div class="section-label">Qualifications</div>
-        <h2 class="section-title">Certifications & Habilitations</h2>
-        <p class="section-desc">Toutes mes certifications sont valides et vérifiables.</p>
-      </div>
-      <div class="certifs-grid">
-        <div class="certif-item sr sr-d1">
-          <span class="c-icon">📋</span>
-          <h3>CACES® PEMP B</h3>
-          <p>R486 Cat. 1B & 3B</p>
+        <!-- Back Card Preview -->
+        <div class="card-preview-box card-back">
+          <div class="card-back-title">Domaines d'intervention</div>
+          <ul class="card-back-list">
+            <li>
+              <span class="glow-bullet"></span>
+              <span>Interventions grandes hauteurs, solutions sur mesure</span>
+            </li>
+            <li>
+              <span class="glow-bullet"></span>
+              <span>Habilitations électriques BT & HT</span>
+            </li>
+            <li>
+              <span class="glow-bullet"></span>
+              <span>CACES® PEMP B (1B-3B) R486</span>
+            </li>
+            <li>
+              <span class="glow-bullet"></span>
+              <span>Accès sites nucléaires</span>
+            </li>
+            <li>
+              <span class="glow-bullet"></span>
+              <span>Mobilité sur toute la France</span>
+            </li>
+          </ul>
         </div>
-        <div class="certif-item sr sr-d2">
-          <span class="c-icon">⚡</span>
-          <h3>Habilitation BT</h3>
-          <p>Basse Tension</p>
-        </div>
-        <div class="certif-item sr sr-d3">
-          <span class="c-icon">🔴</span>
-          <h3>Habilitation HT</h3>
-          <p>Haute Tension</p>
-        </div>
-        <div class="certif-item sr sr-d4">
-          <span class="c-icon">☢️</span>
-          <h3>Accès nucléaire</h3>
-          <p>Sites sensibles</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- === CTA === -->
-    <div class="cta-banner sr">
-      <h2>Un projet ? Parlons-en.</h2>
-      <p>Devis gratuit sous 24h, déplacement sur toute la France.</p>
-      <a href="#contact" class="btn btn-fill">Demander un devis</a>
-      <div>
-        <a href="tel:+33767341655" class="cta-phone">📞 07 67 34 16 55</a>
       </div>
     </div>
 
-    <!-- === CONTACT === -->
+    <!-- === SERVICES SECTION (DIRECTLY FROM CARD) === -->
+    <section id="services">
+      <div class="section-header center sr">
+        <div class="section-label">Expertises & Certifications</div>
+        <h2 class="section-title">Nos Prestations</h2>
+        <p class="section-desc">
+          Une réponse rigoureuse et sécurisée pour chacun de vos chantiers en hauteur.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. Grandes hauteurs -->
+        <article class="service-card sr sr-d1">
+          <div class="service-num">01 / Spécialité</div>
+          <h3>Interventions Grandes Hauteurs</h3>
+          <p>
+            Solutions sur mesure adaptées aux contraintes techniques de votre site. Maintenance, levage, montage, nettoyage et inspections techniques en hauteur.
+          </p>
+        </article>
+
+        <!-- 2. Habilitations électriques -->
+        <article class="service-card sr sr-d2">
+          <div class="service-num">02 / Sécurité</div>
+          <h3>Habilitations Électriques BT & HT</h3>
+          <p>
+            Opérateur habilité Basse Tension (BT) et Haute Tension (HT) pour des manœuvres et travaux à proximité immédiate des réseaux et installations électriques.
+          </p>
+        </article>
+
+        <!-- 3. CACES -->
+        <article class="service-card sr sr-d3">
+          <div class="service-num">03 / Certification</div>
+          <h3>CACES® PEMP B (1B-3B) R486</h3>
+          <p>
+            Conduite certifiée de Plateformes Élévatrices Mobiles de Personnes à élévation multidirectionnelle (bras articulés, télescopiques, camions nacelles).
+          </p>
+        </article>
+
+        <!-- 4. Sites nucléaires -->
+        <article class="service-card sr sr-d1">
+          <div class="service-num">04 / Haute Exigence</div>
+          <h3>Accès Sites Nucléaires</h3>
+          <p>
+            Habilitations requises pour intervenir en milieux sensibles et centrales nucléaires, dans le respect absolu des procédures et normes de sécurité.
+          </p>
+        </article>
+
+        <!-- 5. Mobilité -->
+        <article class="service-card sr sr-d2">
+          <div class="service-num">05 / Disponibilité</div>
+          <h3>Mobilité sur Toute la France</h3>
+          <p>
+            Basé à Mérignac (33), déplacements rapides sur toute la France métropolitaine pour vos chantiers ponctuels ou missions de longue durée.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- === ABOUT SECTION === -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="about-content sr">
+          <div class="section-label">Engagement</div>
+          <h2 class="section-title">Nacelliste Professionnel Indépendant</h2>
+          <p>
+            <strong>Z NACELLES</strong> vous accompagne avec rigueur et disponibilité. Basé au <strong>26 av. Gustave Eiffel à Mérignac</strong>, j'assure la conduite sécurisée de nacelles élévatrices pour entreprises du BTP, de l'industrie et de l'énergie.
+          </p>
+          <p>
+            Un interlocuteur unique, du matériel contrôlé et des habilitations vérifiées pour garantir la fluidité et la conformité de vos opérations en hauteur.
+          </p>
+          <div class="about-specs-grid">
+            <div class="spec-pill"><span class="check">✓</span> CACES® R486 1B/3B</div>
+            <div class="spec-pill"><span class="check">✓</span> Habilitations BT & HT</div>
+            <div class="spec-pill"><span class="check">✓</span> Accès Sites Sensibles</div>
+            <div class="spec-pill"><span class="check">✓</span> Intervention France Entière</div>
+          </div>
+        </div>
+
+        <div class="about-visual-card sr sr-d2">
+          <div class="visual-truck-badge">Camion Nacelle PEMP B</div>
+          <div class="about-visual-title">Z NACELLES</div>
+          <p class="about-visual-sub">
+            Conduite experte & sécurité maximale sur vos chantiers.
+          </p>
+          <div style="margin-top: 20px;">
+            <a href="#contact" class="btn btn-primary" style="font-size: 0.95rem; padding: 10px 24px;">Demander une intervention</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === CONTACT SECTION === -->
     <section id="contact">
       <div class="section-header center sr">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">Contactez-moi</h2>
-        <p class="section-desc">Décrivez votre besoin, je vous réponds rapidement.</p>
+        <div class="section-label">Coordonnées</div>
+        <h2 class="section-title">Contact Direct</h2>
+        <p class="section-desc">
+          Une question, une urgence ou un devis d'intervention ? Contactez-moi par téléphone ou via le formulaire.
+        </p>
       </div>
+
       <div class="contact-grid">
+        <!-- Form -->
         <form class="contact-form sr" id="contactForm" aria-label="Formulaire de contact">
           <div class="field">
-            <label for="name">Nom</label>
-            <input type="text" id="name" placeholder="Votre nom" required autocomplete="name" />
+            <label for="name">Nom / Société</label>
+            <input type="text" id="name" placeholder="Votre nom ou entreprise" required autocomplete="name" />
           </div>
           <div class="field">
-            <label for="email">Email</label>
+            <label for="email">Adresse Email</label>
             <input type="email" id="email" placeholder="votre@email.com" required autocomplete="email" />
           </div>
           <div class="field">
@@ -182,50 +235,57 @@ import Layout from '../layouts/Layout.astro';
             <input type="tel" id="phone" placeholder="06 00 00 00 00" autocomplete="tel" />
           </div>
           <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Décrivez votre besoin..." required></textarea>
+            <label for="message">Détails de l'intervention</label>
+            <textarea id="message" placeholder="Type de travaux, hauteur estimée, lieu, dates souhaitées..." required></textarea>
           </div>
-          <button type="submit" class="form-btn">Envoyer</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            Envoyer ma demande
+          </button>
         </form>
 
-        <div class="contact-details sr sr-d2">
-          <div class="c-item">
-            <div class="c-i-icon">📞</div>
+        <!-- Coordinates Stack -->
+        <div class="contact-cards-stack sr sr-d2">
+          <div class="contact-info-card">
+            <div class="c-icon-badge">📞</div>
             <div>
-              <h4>Téléphone</h4>
-              <a href="tel:+33767341655">07 67 34 16 55</a>
+              <div class="c-detail-title">Téléphone Direct</div>
+              <div class="c-detail-val"><a href="tel:+33767341655">07 67 34 16 55</a></div>
             </div>
           </div>
-          <div class="c-item">
-            <div class="c-i-icon">✉️</div>
+
+          <div class="contact-info-card">
+            <div class="c-icon-badge">✉️</div>
             <div>
-              <h4>Email</h4>
-              <a href="mailto:z.nacelles@gmail.com">z.nacelles@gmail.com</a>
+              <div class="c-detail-title">Email Professionnel</div>
+              <div class="c-detail-val"><a href="mailto:z.nacelles@gmail.com">z.nacelles@gmail.com</a></div>
             </div>
           </div>
-          <div class="c-item">
-            <div class="c-i-icon">📍</div>
+
+          <div class="contact-info-card">
+            <div class="c-icon-badge">📍</div>
             <div>
-              <h4>Adresse</h4>
-              <p>26 av. Gustave Eiffel, 33700 Mérignac</p>
+              <div class="c-detail-title">Adresse</div>
+              <div class="c-detail-val">26 av. Gustave Eiffel, 33700 MÉRIGNAC</div>
             </div>
           </div>
-          <div class="c-item">
-            <div class="c-i-icon">🗺️</div>
+
+          <div class="contact-info-card">
+            <div class="c-icon-badge">🗺️</div>
             <div>
-              <h4>Zone d'intervention</h4>
-              <p>Toute la France</p>
+              <div class="c-detail-title">Rayon d'action</div>
+              <div class="c-detail-val">Toute la France métropolitaine</div>
             </div>
           </div>
-          <div class="contact-map">
+
+          <!-- Google Maps iframe -->
+          <div class="contact-map-frame">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.7!2d-0.6413!3d44.8314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54d86b2c4f2e43%3A0x0!2s26+Avenue+Gustave+Eiffel%2C+33700+M%C3%A9rignac!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="Z NACELLES — 26 avenue Gustave Eiffel, 33700 Mérignac"
-            >
-            </iframe>
+              title="Z NACELLES — Mérignac"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -234,43 +294,26 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- === FOOTER === -->
   <footer>
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="f-logo"><span>Z</span> NACELLES</div>
-        <p>Nacelliste professionnel basé à Mérignac. CACES® R486, habilitations électriques, accès nucléaire.</p>
+    <div class="footer-inner">
+      <div class="footer-logo-line">
+        <ZLogo width={28} height={28} className="brand-emblem" />
+        <span class="brand-title" style="font-size: 1.05rem;">Z NACELLES</span>
       </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="#about">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#certifs">Certifications</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="#services">Travaux en hauteur</a>
-        <a href="#services">Habilitations électriques</a>
-        <a href="#services">CACES® R486</a>
-        <a href="#services">Sites nucléaires</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="tel:+33767341655">07 67 34 16 55</a>
-        <a href="mailto:z.nacelles@gmail.com">z.nacelles@gmail.com</a>
-        <a href="#contact">Demander un devis</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Z NACELLES — Tous droits réservés</p>
+      <p class="footer-copy">
+        Nacelliste Professionnel — 26 av. Gustave Eiffel, 33700 MÉRIGNAC — 07 67 34 16 55 — z.nacelles@gmail.com
+      </p>
+      <p class="footer-copy" style="opacity: 0.6; font-size: 0.75rem;">
+        © {new Date().getFullYear()} Z NACELLES. Tous droits réservés.
+      </p>
     </div>
   </footer>
 
-  <!-- WhatsApp -->
+  <!-- WhatsApp Floating Button -->
   <a
     href="https://wa.me/33767341655"
     target="_blank"
     rel="noopener noreferrer"
-    class="wa-btn"
+    class="wa-float"
     aria-label="WhatsApp"
     title="Nous contacter sur WhatsApp"
   >
@@ -281,7 +324,7 @@ import Layout from '../layouts/Layout.astro';
     </svg>
   </a>
 
-  <!-- Back to top -->
+  <!-- Back to top button -->
   <button class="to-top" id="toTop" aria-label="Retour en haut">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 15l-6-6-6 6"></path>
