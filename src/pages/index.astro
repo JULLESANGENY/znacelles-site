@@ -4,8 +4,8 @@ import ZLogo from '../components/ZLogo.astro';
 ---
 
 <Layout
-  title="Z NACELLES | Nacelliste Professionnel — Mérignac (33) | France Entière"
-  description="Z NACELLES — Nacelliste professionnel. Interventions grandes hauteurs, habilitations électriques BT & HT, CACES® PEMP B R486, accès sites nucléaires. Mobilité sur toute la France."
+  title="Z NACELLES | Nacelliste Professionnel — Spécialiste Télécoms, Pylônes 4G/5G & Grandes Hauteurs | Mérignac (33)"
+  description="Z NACELLES — Nacelliste professionnel certifié. Déploiement et maintenance Télécoms (pylônes, antennes 4G/5G), habilitation travaux en hauteur, habilitations électriques BT & HT, CACES® PEMP B R486, accès sites nucléaires. Mobilité France entière."
 >
   <!-- === NAVBAR === -->
   <header>
@@ -19,6 +19,7 @@ import ZLogo from '../components/ZLogo.astro';
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#services">Services</a></li>
+        <li><a href="#telecom">Télécoms</a></li>
         <li><a href="#galerie">Réalisations</a></li>
         <li><a href="#about">À propos</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -36,11 +37,11 @@ import ZLogo from '../components/ZLogo.astro';
         <div class="hero-logo-box sr">
           <ZLogo width={110} height={70} className="hero-emblem-large" />
           <h1 class="hero-brand-name">Z NACELLES</h1>
-          <div class="hero-badge-tag">Nacelliste Professionnel</div>
+          <div class="hero-badge-tag">Nacelliste Professionnel • Spécialiste Télécoms & Grandes Hauteurs</div>
         </div>
 
         <p class="hero-desc sr sr-d1">
-          Solutions sur mesure pour vos travaux en grandes hauteurs. Opérateur qualifié, matériel certifié et mobilité sur l'ensemble du territoire national.
+          Partenaire de référence pour vos interventions en hauteur : <strong>déploiement et maintenance de réseaux Télécoms (pylônes, antennes 4G/5G, FH)</strong>, chantiers BTP, industrie et réseaux d'énergie. Conduite experte, matériel certifié et mobilité sur toute la France.
         </p>
 
         <div class="hero-actions sr sr-d2">
@@ -92,11 +93,15 @@ import ZLogo from '../components/ZLogo.astro';
 
         <!-- Back Card Preview -->
         <div class="card-preview-box card-back">
-          <div class="card-back-title">Domaines d'intervention</div>
+          <div class="card-back-title">Domaines d'intervention & Habilitations</div>
           <ul class="card-back-list">
             <li>
               <span class="glow-bullet"></span>
-              <span>Interventions grandes hauteurs, solutions sur mesure</span>
+              <span>Télécoms & Pylônes relais 4G/5G</span>
+            </li>
+            <li>
+              <span class="glow-bullet"></span>
+              <span>Habilitation Travaux en Hauteur & Port du Harnais</span>
             </li>
             <li>
               <span class="glow-bullet"></span>
@@ -108,7 +113,7 @@ import ZLogo from '../components/ZLogo.astro';
             </li>
             <li>
               <span class="glow-bullet"></span>
-              <span>Accès sites nucléaires</span>
+              <span>Accès sites nucléaires & industriels</span>
             </li>
             <li>
               <span class="glow-bullet"></span>
@@ -119,13 +124,50 @@ import ZLogo from '../components/ZLogo.astro';
       </div>
     </div>
 
-    <!-- === SERVICES SECTION (DIRECTLY FROM CARD) === -->
+    <!-- === TELECOM FOCUS SECTION === -->
+    <section id="telecom" style="background: linear-gradient(180deg, #090a0f 0%, #0d0f17 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="section-header center sr">
+        <div class="section-label" style="color: var(--cyan);">Activité Principale</div>
+        <h2 class="section-title">Spécialiste Réseaux Télécoms & Pylônes</h2>
+        <p class="section-desc">
+          Partenaire privilégié des opérateurs, intégrateurs et équipementiers télécoms pour tous leurs besoins d'accès et d'assistance nacelle en hauteur.
+        </p>
+      </div>
+
+      <div class="services-grid" style="max-width: 1150px; margin: 0 auto 30px;">
+        <article class="service-card sr sr-d1" style="border-color: rgba(0, 212, 255, 0.3); background: rgba(0, 212, 255, 0.03);">
+          <div class="service-num">📡 Télécom 01</div>
+          <h3>Pylônes Relais 4G & 5G</h3>
+          <p>
+            Positionnement précis et sécurisé de la nacelle pour l'installation, le réglage azimut/tilt et le remplacement d'antennes panneaux et baies radio sur pylônes tubulaires, treillis et châteaux d'eau.
+          </p>
+        </article>
+
+        <article class="service-card sr sr-d2" style="border-color: rgba(0, 212, 255, 0.3); background: rgba(0, 212, 255, 0.03);">
+          <div class="service-num">🌐 Télécom 02</div>
+          <h3>Faisceaux Hertziens (FH) & Mâts</h3>
+          <p>
+            Assistance au pointage de paraboles FH, tirage de jarretières et câblage coaxial/fibre optique le long des infrastructures de télécommunication en hauteur.
+          </p>
+        </article>
+
+        <article class="service-card sr sr-d3" style="border-color: rgba(0, 212, 255, 0.3); background: rgba(0, 212, 255, 0.03);">
+          <div class="service-num">🏢 Télécom 03</div>
+          <h3>Toitures-Terrasses & Sites Urbains</h3>
+          <p>
+            Intervention en milieu urbain dense et sites complexes sur toits d'immeubles, terrasses et façades avec grand déport latéral et sécurisation du périmètre au sol.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- === SERVICES SECTION (DIRECTLY FROM CARD & SKILLS) === -->
     <section id="services">
       <div class="section-header center sr">
         <div class="section-label">Expertises & Certifications</div>
-        <h2 class="section-title">Nos Prestations</h2>
+        <h2 class="section-title">Nos Prestations & Habilitations</h2>
         <p class="section-desc">
-          Une réponse rigoureuse et sécurisée pour chacun de vos chantiers en hauteur.
+          Une réponse rigoureuse, sécurisée et certifiée pour chacun de vos chantiers en hauteur.
         </p>
       </div>
 
@@ -135,40 +177,49 @@ import ZLogo from '../components/ZLogo.astro';
           <div class="service-num">01 / Spécialité</div>
           <h3>Interventions Grandes Hauteurs</h3>
           <p>
-            Solutions sur mesure adaptées aux contraintes techniques de votre site. Maintenance, levage, montage, nettoyage et inspections techniques en hauteur.
+            Solutions sur mesure adaptées aux contraintes techniques de votre site. Maintenance, levage, montage, nettoyage et inspections techniques en hauteur avec positionnement millimétré.
           </p>
         </article>
 
-        <!-- 2. Habilitations électriques -->
-        <article class="service-card sr sr-d2">
+        <!-- 2. Habilitation Travaux en Hauteur -->
+        <article class="service-card sr sr-d2" style="border-color: rgba(0, 212, 255, 0.25);">
           <div class="service-num">02 / Sécurité</div>
+          <h3>Habilitation Travaux en Hauteur & Harnais</h3>
+          <p>
+            Certification et formation complète aux travaux en hauteur : port et vérification des EPI de classe 3 (harnais, longes, antichute), respect strict des règles de sécurité et balisage de zone.
+          </p>
+        </article>
+
+        <!-- 3. Habilitations électriques -->
+        <article class="service-card sr sr-d3">
+          <div class="service-num">03 / Énergie</div>
           <h3>Habilitations Électriques BT & HT</h3>
           <p>
             Opérateur habilité Basse Tension (BT) et Haute Tension (HT) pour des manœuvres et travaux à proximité immédiate des réseaux et installations électriques.
           </p>
         </article>
 
-        <!-- 3. CACES -->
-        <article class="service-card sr sr-d3">
-          <div class="service-num">03 / Certification</div>
+        <!-- 4. CACES -->
+        <article class="service-card sr sr-d1">
+          <div class="service-num">04 / Certification</div>
           <h3>CACES® PEMP B (1B-3B) R486</h3>
           <p>
             Conduite certifiée de Plateformes Élévatrices Mobiles de Personnes à élévation multidirectionnelle (bras articulés, télescopiques, camions nacelles).
           </p>
         </article>
 
-        <!-- 4. Sites nucléaires -->
-        <article class="service-card sr sr-d1">
-          <div class="service-num">04 / Haute Exigence</div>
-          <h3>Accès Sites Nucléaires</h3>
+        <!-- 5. Sites nucléaires -->
+        <article class="service-card sr sr-d2">
+          <div class="service-num">05 / Haute Exigence</div>
+          <h3>Accès Sites Nucléaires & Sensibles</h3>
           <p>
-            Habilitations requises pour intervenir en milieux sensibles et centrales nucléaires, dans le respect absolu des procédures et normes de sécurité.
+            Habilitations requises pour intervenir en milieux sensibles et centrales nucléaires, dans le respect absolu des procédures et normes de sécurité renforcée.
           </p>
         </article>
 
-        <!-- 5. Mobilité -->
-        <article class="service-card sr sr-d2">
-          <div class="service-num">05 / Disponibilité</div>
+        <!-- 6. Mobilité -->
+        <article class="service-card sr sr-d3">
+          <div class="service-num">06 / Disponibilité</div>
           <h3>Mobilité sur Toute la France</h3>
           <p>
             Basé à Mérignac (33), déplacements rapides sur toute la France métropolitaine pour vos chantiers ponctuels ou missions de longue durée.
@@ -183,7 +234,7 @@ import ZLogo from '../components/ZLogo.astro';
         <div class="section-label">Sur le terrain</div>
         <h2 class="section-title">Nos Réalisations Réelles</h2>
         <p class="section-desc">
-          Aperçu de nos interventions techniques en conditions réelles : travaux de nuit, haute montagne, réseaux électriques et chantiers d'envergure.
+          Aperçu de nos interventions techniques en conditions réelles : pylônes télécoms, travaux de nuit, haute montagne et réseaux électriques.
         </p>
       </div>
 
@@ -199,7 +250,7 @@ import ZLogo from '../components/ZLogo.astro';
             <div class="gallery-badge red">Habilitation HT / Nuit</div>
           </div>
           <div class="gallery-featured-content">
-            <div class="featured-pill">⚡ Réseau Électrique</div>
+            <div class="featured-pill">⚡ Réseau Électrique & HT</div>
             <h3>Intervention de Nuit & Lignes Haute Tension (HT)</h3>
             <p>
               Manœuvre de précision et positionnement du bras élévateur à proximité d'un pylône haute tension. Respect rigoureux des distances de sécurité et des habilitations électriques requises.
@@ -212,8 +263,24 @@ import ZLogo from '../components/ZLogo.astro';
           </div>
         </div>
 
-        <!-- Card 1: Mountain High Altitude -->
+        <!-- Card 1: Telecom Pylon Structure -->
         <div class="gallery-card sr sr-d1">
+          <div class="gallery-img-wrapper">
+            <img
+              src="/images/intervention-pylone-telecom.jpg"
+              alt="Intervention Z NACELLES sur pylône relais et structure en hauteur"
+              loading="lazy"
+            />
+            <div class="gallery-badge">Télécoms & Pylônes</div>
+          </div>
+          <div class="gallery-content">
+            <h3>Pylônes Télécoms & Réseaux Mobiles</h3>
+            <p>Chantier sur infrastructure de télécommunication et structure treillis pour déploiement d'antennes et relais de communication.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Mountain High Altitude -->
+        <div class="gallery-card sr sr-d2">
           <div class="gallery-img-wrapper">
             <img
               src="/images/intervention-montagne-haute-altitude.jpg"
@@ -223,13 +290,13 @@ import ZLogo from '../components/ZLogo.astro';
             <div class="gallery-badge">Haute Altitude</div>
           </div>
           <div class="gallery-content">
-            <h3>Travaux en Haute Montagne</h3>
-            <p>Intervention sur structures techniques et remontées mécaniques en conditions climatiques extrêmes avec équipement de protection individuel complet.</p>
+            <h3>Travaux en Haute Montagne & Sites Isolés</h3>
+            <p>Intervention sur structures techniques et pylônes en conditions climatiques extrêmes avec équipement de protection individuel complet.</p>
           </div>
         </div>
 
-        <!-- Card 2: Aerial Drone Shot -->
-        <div class="gallery-card sr sr-d2">
+        <!-- Card 3: Aerial Drone Shot -->
+        <div class="gallery-card sr sr-d3">
           <div class="gallery-img-wrapper">
             <img
               src="/images/nacelle-drone-vue-aerienne.png"
@@ -244,8 +311,8 @@ import ZLogo from '../components/ZLogo.astro';
           </div>
         </div>
 
-        <!-- Card 3: Team on Bridge / Worksite -->
-        <div class="gallery-card sr sr-d3">
+        <!-- Card 4: Team on Bridge / Worksite -->
+        <div class="gallery-card sr sr-d1">
           <div class="gallery-img-wrapper">
             <img
               src="/images/equipe-nacelliste-chantier.jpg"
@@ -255,29 +322,29 @@ import ZLogo from '../components/ZLogo.astro';
             <div class="gallery-badge">Équipe & Sécurité</div>
           </div>
           <div class="gallery-content">
-            <h3>Intervention sur Ouvrage d'Art</h3>
+            <h3>Habilitation Hauteur sur Ouvrage d'Art</h3>
             <p>Opérations coordonnées en panier nacelle sécurisé pour maintenance d'infrastructures et d'ouvrages suspendus.</p>
           </div>
         </div>
 
-        <!-- Card 4: Maritime / River Mast -->
-        <div class="gallery-card sr sr-d1">
+        <!-- Card 5: Maritime / River Mast -->
+        <div class="gallery-card sr sr-d2">
           <div class="gallery-img-wrapper">
             <img
               src="/images/intervention-hauteur-maritime.jpg"
               alt="Inspection technique de mât au-dessus de l'eau"
               loading="lazy"
             />
-            <div class="gallery-badge">Inspection</div>
+            <div class="gallery-badge">Télécom & Mât</div>
           </div>
           <div class="gallery-content">
-            <h3>Inspection & Maintenance Fluviale / Maritime</h3>
-            <p>Accès difficile et interventions délicates au-dessus de plans d'eau pour maintenance de mâts, radars et antennes techniques.</p>
+            <h3>Inspection & Maintenance de Mâts Techniques</h3>
+            <p>Accès difficile et interventions délicates au-dessus de plans d'eau pour maintenance de mâts, radars, antennes et faisceaux hertziens.</p>
           </div>
         </div>
 
-        <!-- Card 5: High Steel Structure -->
-        <div class="gallery-card sr sr-d2">
+        <!-- Card 6: High Steel Structure -->
+        <div class="gallery-card sr sr-d3">
           <div class="gallery-img-wrapper">
             <img
               src="/images/intervention-structure-metallique.jpg"
@@ -301,14 +368,16 @@ import ZLogo from '../components/ZLogo.astro';
           <div class="section-label">Engagement & Équipement</div>
           <h2 class="section-title">Nacelliste Professionnel Indépendant</h2>
           <p>
-            <strong>Z NACELLES</strong> vous accompagne avec rigueur et disponibilité. Basé au <strong>26 av. Gustave Eiffel à Mérignac</strong>, j'assure la conduite sécurisée de nacelles élévatrices pour les entreprises du BTP, de l'industrie, des réseaux d'énergie et des sites sensibles.
+            <strong>Z NACELLES</strong> vous accompagne avec rigueur et disponibilité. Basé au <strong>26 av. Gustave Eiffel à Mérignac</strong>, j'assure la conduite sécurisée de nacelles élévatrices avec une spécialisation forte dans les <strong>réseaux de télécommunications (antennes 4G/5G, pylônes relais, FH)</strong>, le BTP, l'industrie, les réseaux d'énergie et les sites sensibles.
           </p>
           <p>
-            Un interlocuteur unique sur votre chantier, un matériel professionnel contrôlé et des habilitations vérifiées pour garantir la réussite et la conformité totale de vos opérations.
+            Un interlocuteur unique sur votre chantier, un matériel professionnel contrôlé et toutes les habilitations indispensables pour garantir la réussite et la conformité totale de vos opérations.
           </p>
           <div class="about-specs-grid">
-            <div class="spec-pill"><span class="check">✓</span> CACES® R486 1B/3B</div>
-            <div class="spec-pill"><span class="check">✓</span> Habilitations BT & HT</div>
+            <div class="spec-pill"><span class="check">✓</span> Pylônes Télécoms 4G/5G</div>
+            <div class="spec-pill"><span class="check">✓</span> Habilitation Travaux en Hauteur</div>
+            <div class="spec-pill"><span class="check">✓</span> CACES® R486 1B/3B PEMP B</div>
+            <div class="spec-pill"><span class="check">✓</span> Habilitations Électriques BT & HT</div>
             <div class="spec-pill"><span class="check">✓</span> Accès Sites Sensibles & Nucléaire</div>
             <div class="spec-pill"><span class="check">✓</span> Déplacements France Entière</div>
           </div>
@@ -339,7 +408,7 @@ import ZLogo from '../components/ZLogo.astro';
         <div class="section-label">Coordonnées</div>
         <h2 class="section-title">Contact Direct</h2>
         <p class="section-desc">
-          Une question, une urgence ou un devis d'intervention ? Envoyez votre demande, elle arrive directement sur ma boîte mail.
+          Un chantier télécom, une urgence ou un devis d'intervention ? Envoyez votre demande, elle arrive directement sur ma boîte mail.
         </p>
       </div>
 
@@ -371,7 +440,7 @@ import ZLogo from '../components/ZLogo.astro';
           </div>
           <div class="field">
             <label for="message">Détails de l'intervention *</label>
-            <textarea id="message" name="message" placeholder="Type de travaux, hauteur estimée, lieu, dates souhaitées..." required></textarea>
+            <textarea id="message" name="message" placeholder="Type de travaux (Télécoms, Pylônes, BTP, Électricité...), hauteur estimée, lieu, dates souhaitées..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%; justify-content: center;">
             Envoyer ma demande
@@ -436,7 +505,7 @@ import ZLogo from '../components/ZLogo.astro';
         <span class="brand-title" style="font-size: 1.05rem;">Z NACELLES</span>
       </div>
       <p class="footer-copy">
-        Nacelliste Professionnel — 26 av. Gustave Eiffel, 33700 MÉRIGNAC — 07 67 34 16 55 — z.nacelles@gmail.com
+        Nacelliste Professionnel — Spécialiste Télécoms & Grandes Hauteurs — 26 av. Gustave Eiffel, 33700 MÉRIGNAC — 07 67 34 16 55 — z.nacelles@gmail.com
       </p>
       <p class="footer-copy" style="opacity: 0.6; font-size: 0.75rem;">
         © {new Date().getFullYear()} Z NACELLES. Tous droits réservés.
