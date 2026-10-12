@@ -1,0 +1,21 @@
+---
+export interface Props {
+  className?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
+
+const { className = "brand-emblem", width = 42, height = 42, alt = "Z NACELLES Emblem" } = Astro.props;
+---
+
+<img
+  src="/images/emblem-znacelles-transparent.png"
+  alt={alt}
+  class={className}
+  width={width}
+  height={height}
+  loading="eager"
+  decoding="async"
+  style={`width: ${width}px; height: auto; object-fit: contain; filter: drop-shadow(0 0 16px rgba(0, 212, 255, 0.35));`}
+/>

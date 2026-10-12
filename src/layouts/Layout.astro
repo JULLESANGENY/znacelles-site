@@ -1,0 +1,106 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Référencement local & Geo Tags -->
+  <meta name="geo.region" content="FR-33">
+  <meta name="geo.placename" content="Mérignac, Bordeaux, Gironde">
+  <meta name="geo.position" content="44.8401;-0.6611">
+  <meta name="ICBM" content="44.8401, -0.6611">
+  <link rel="canonical" href="https://www.znacelles.fr/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.znacelles.fr/">
+  <meta property="og:image" content="https://www.znacelles.fr/images/camion-nacelle-flotte.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Z NACELLES">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#0f2238">
+
+  <!-- Polices BTP & Levage : Barlow & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Données structurées Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.znacelles.fr/#company",
+        "name": "Z Nacelles",
+        "legalName": "Z Nacelles",
+        "description": "Entreprise spécialisée dans la location de camion nacelle grande hauteur avec opérateur CACES R486. Interventions télécoms, électricité BT/HT et sites nucléaires à Bordeaux, Mérignac et toute la France.",
+        "url": "https://www.znacelles.fr",
+        "telephone": "+33767341655",
+        "email": "z.nacelles@gmail.com",
+        "image": "https://www.znacelles.fr/images/camion-nacelle-flotte.jpg",
+        "logo": "https://www.znacelles.fr/images/logo-znacelles-transparent.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "26 avenue Gustave Eiffel",
+          "addressLocality": "Mérignac",
+          "postalCode": "33700",
+          "addressRegion": "Gironde",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.8401,
+          "longitude": -0.6611
+        },
+        "areaServed": ["Mérignac", "Bordeaux", "Gironde", "Nouvelle-Aquitaine", "France"],
+        "priceRange": "Sur devis",
+        "openingHours": "Mo-Su 06:00-21:00"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.znacelles.fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Faut-il posséder le CACES pour louer un camion nacelle chez Z Nacelles ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, aucun CACES n'est requis de votre part. Z Nacelles fournit systématiquement un opérateur certifié CACES R486 (1B-3B) qui prend en charge la conduite, la stabilisation et la manœuvre."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Exigez-vous une caution bancaire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aucune caution bancaire n'est demandée, contrairement aux loueurs sans chauffeur qui bloquent 3 000 € à 5 000 €. Notre opérateur est le seul responsable de l'engin."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <slot />
+</body>
+</html>
