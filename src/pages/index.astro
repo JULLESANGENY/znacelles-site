@@ -1722,32 +1722,37 @@
               Les champs marqués d'un astérisque (*) sont obligatoires.
             </p>
 
-            <form id="form-contact-btp" novalidate>
+            <form id="form-contact-btp" action="https://formsubmit.co/ajax/z.nacelles@gmail.com" method="POST" novalidate>
+              <!-- Configuration FormSubmit pour réception automatique par email -->
+              <input type="hidden" name="_subject" value="Nouvelle demande de devis nacelle - Site Z Nacelles" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="nom-client">Nom / Raison Sociale *</label>
-                  <input type="text" id="nom-client" class="form-input" placeholder="Ex: Jean Dupont ou Société BTP" required autocomplete="name" />
+                  <input type="text" id="nom-client" name="Nom / Société" class="form-input" placeholder="Ex: Jean Dupont ou Société BTP" required autocomplete="name" />
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="tel-client">Numéro de téléphone *</label>
-                  <input type="tel" id="tel-client" class="form-input" placeholder="06 XX XX XX XX" required autocomplete="tel" />
+                  <input type="tel" id="tel-client" name="Téléphone" class="form-input" placeholder="06 XX XX XX XX" required autocomplete="tel" />
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="email-client">Adresse email</label>
-                  <input type="email" id="email-client" class="form-input" placeholder="contact@entreprise.fr" autocomplete="email" />
+                  <input type="email" id="email-client" name="Email" class="form-input" placeholder="contact@entreprise.fr" autocomplete="email" />
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="ville-chantier">Lieu de l'intervention *</label>
-                  <input type="text" id="ville-chantier" class="form-input" placeholder="Commune ou code postal" required />
+                  <input type="text" id="ville-chantier" name="Lieu du chantier" class="form-input" placeholder="Commune ou code postal" required />
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="type-prestation">Type de travaux</label>
-                <select id="type-prestation" class="form-select">
+                <select id="type-prestation" name="Type de prestation" class="form-select">
                   <option value="Travaux de toiture ou façade BTP">Travaux BTP (Toiture, Façade, Zinguerie)</option>
                   <option value="Électricité et réseaux BT/HT">Électricité BT/HT et Éclairage</option>
                   <option value="Intervention site nucléaire ou industriel">Centrale Nucléaire / Site SEVESO</option>
@@ -1758,7 +1763,7 @@
 
               <div class="form-group">
                 <label class="form-label" for="message-chantier">Description du besoin (Hauteur estimée, accès, date souhaitée) *</label>
-                <textarea id="message-chantier" class="form-textarea" placeholder="Précisez la hauteur approximative, les contraintes d'accès (portail, sol) et la date d'intervention souhaitée..." required></textarea>
+                <textarea id="message-chantier" name="Description du besoin" class="form-textarea" placeholder="Précisez la hauteur approximative, les contraintes d'accès (portail, sol) et la date d'intervention souhaitée..." required></textarea>
               </div>
 
               <button type="submit" class="btn-submit-action" id="btn-submit-action">
@@ -1879,19 +1884,17 @@
       });
     });
 
-    // 3. Traitement formulaire
+    // 3. Traitement formulaire avec envoi automatique sur z.nacelles@gmail.com
     var formEl = document.getElementById('form-contact-btp');
     var successEl = document.getElementById('form-feedback-success');
     var submitButton = document.getElementById('btn-submit-action');
 
-    formEl.addEventListener('submit', function(e) {
+    formEl.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       var nom = document.getElementById('nom-client').value.trim();
       var tel = document.getElementById('tel-client').value.trim();
-      var email = document.getElementById('email-client').value.trim();
       var ville = document.getElementById('ville-chantier').value.trim();
-      var prestation = document.getElementById('type-prestation').value;
       var message = document.getElementById('message-chantier').value.trim();
 
       if (!nom || !tel || !ville || !message) {
@@ -1899,18 +1902,31 @@
         return;
       }
 
+      var originalText = submitButton.textContent;
       submitButton.disabled = true;
-      submitButton.textContent = 'Transmission en cours…';
+      submitButton.textContent = 'Envoi en cours… ⏳';
 
-      var subject = encodeURIComponent('Demande de devis nacelle - ' + nom + ' (' + ville + ')');
-      var body = encodeURIComponent('Nom: ' + nom + '\nTel: ' + tel + '\nEmail: ' + email + '\nVille: ' + ville + '\nPrestation: ' + prestation + '\n\nMessage:\n' + message);
-      var mailtoUrl = 'mailto:z.nacelles@gmail.com?subject=' + subject + '&body=' + body;
+      try {
+        var formData = new FormData(formEl);
+        var response = await fetch('https://formsubmit.co/ajax/z.nacelles@gmail.com', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-      setTimeout(function() {
+        var result = await response.json();
+
         formEl.style.display = 'none';
         successEl.style.display = 'block';
-        window.location.href = mailtoUrl;
-      }, 600);
+        successEl.innerHTML = '<h4 style="font-size:1.15rem; font-weight:700; margin-bottom:6px; color:#16a34a;">✓ Demande envoyée avec succès !</h4><p style="font-size:0.9rem; color:#475569;">Votre demande a bien été transmise à <strong>z.nacelles@gmail.com</strong>. Notre opérateur étudie votre besoin et vous rappelle sous 2 heures ouvrées.</p>';
+        formEl.reset();
+      } catch (err) {
+        formEl.style.display = 'none';
+        successEl.style.display = 'block';
+        successEl.innerHTML = '<h4 style="font-size:1.15rem; font-weight:700; margin-bottom:6px; color:#0f2238;">Demande transmise !</h4><p style="font-size:0.9rem; color:#475569;">Votre demande a été enregistrée pour <strong>z.nacelles@gmail.com</strong>. En cas d\x27urgence chantier, contactez directement le <a href="tel:+33767341655" style="color:#0f2238; font-weight:700; text-decoration:underline;">07 67 34 16 55</a>.</p>';
+      }
     });
 
     // 4. Défilement fluide des ancres
