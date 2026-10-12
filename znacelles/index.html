@@ -97,10 +97,10 @@
   }
   </script>
 
-  <!-- ===== POLICES PROFESSIONNELLES BTP & LEVAGE ===== -->
+  <!-- ===== POLICE BTP & LEVAGE : BARLOW & INTER ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -1156,60 +1156,6 @@
       .hero-actions-row { flex-direction: column; }
       .btn-solid-navy, .btn-outline-navy { width: 100%; justify-content: center; }
     }
-
-    /* SÉLECTEUR DE POLICE INTERACTIF (POUR CHOISIR EN 1 CLIC) */
-    .font-preview-bar {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9998;
-      background: #0f2238;
-      border: 1px solid #334155;
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .font-preview-title {
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-
-    .font-option-btn {
-      background: #1e293b;
-      border: 1px solid #334155;
-      color: #f1f5f9;
-      padding: 6px 11px;
-      border-radius: 3px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: var(--font-base);
-      white-space: nowrap;
-    }
-
-    .font-option-btn:hover {
-      background: #334155;
-      color: #ffffff;
-    }
-
-    .font-option-btn.active {
-      background: var(--clr-red);
-      border-color: var(--clr-red);
-      color: #ffffff;
-    }
-
-    @media (max-width: 899px) {
-      .font-preview-bar { display: none; }
-    }
   </style>
 </head>
 <body>
@@ -1984,46 +1930,6 @@
         }
       });
     });
-
-    // 5. Sélecteur de typographie interactif
-    document.querySelectorAll('.font-option-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.font-option-btn').forEach(function(b) { b.classList.remove('active'); });
-        this.classList.add('active');
-        var headingFont = this.getAttribute('data-heading');
-        var bodyFont = this.getAttribute('data-body');
-        document.documentElement.style.setProperty('--font-heading', headingFont);
-        document.documentElement.style.setProperty('--font-base', bodyFont);
-        try {
-          localStorage.setItem('znacelles_font_heading', headingFont);
-          localStorage.setItem('znacelles_font_body', bodyFont);
-        } catch(e) {}
-      });
-    });
-
-    try {
-      var savedHeading = localStorage.getItem('znacelles_font_heading');
-      var savedBody = localStorage.getItem('znacelles_font_body');
-      if (savedHeading && savedBody) {
-        document.documentElement.style.setProperty('--font-heading', savedHeading);
-        document.documentElement.style.setProperty('--font-base', savedBody);
-        document.querySelectorAll('.font-option-btn').forEach(function(btn) {
-          if (btn.getAttribute('data-heading') === savedHeading) {
-            btn.classList.add('active');
-          } else {
-            btn.classList.remove('active');
-          }
-        });
-      }
-    } catch(e) {}
   </script>
-
-  <!-- SÉLECTEUR DE POLICE EN DIRECT -->
-  <aside class="font-preview-bar" aria-label="Aperçu des styles de police">
-    <span class="font-preview-title">Police :</span>
-    <button type="button" class="font-option-btn active" data-heading="'Barlow', sans-serif" data-body="'Inter', sans-serif">1. Barlow (BTP &amp; Levage)</button>
-    <button type="button" class="font-option-btn" data-heading="'Montserrat', sans-serif" data-body="'Inter', sans-serif">2. Montserrat (Architectural)</button>
-    <button type="button" class="font-option-btn" data-heading="'DM Sans', sans-serif" data-body="'DM Sans', sans-serif">3. DM Sans (Épuré)</button>
-  </aside>
 </body>
 </html>
