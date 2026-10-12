@@ -1,11 +1,1165 @@
----
-import Layout from '../layouts/Layout.astro';
----
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-<Layout
-  title="Location Camion Nacelle avec Chauffeur Bordeaux & Mérignac | Z Nacelles"
-  description="Location de camion nacelle avec opérateur CACES® R486 à Mérignac, Bordeaux et en Gironde. Travaux grandes hauteurs, télécoms, électricité BT/HT et nucléaire. 0€ caution. Devis au 07 67 34 16 55."
->
+  <!-- ===== RÉFÉRENCEMENT NATUREL & LOCAL ===== -->
+  <title>Location Camion Nacelle avec Chauffeur Bordeaux &amp; Mérignac | Z Nacelles</title>
+  <meta name="description" content="Location de camion nacelle avec opérateur CACES® R486 à Mérignac, Bordeaux et en Gironde. Travaux grandes hauteurs, habilitations BT/HT et sites nucléaires. Sans caution. Devis gratuit au 07 67 34 16 55." />
+  <meta name="keywords" content="location camion nacelle bordeaux, camion nacelle avec chauffeur gironde, nacelliste merignac, location nacelle avec operateur, travaux grande hauteur, nacelle caces r486 bordeaux, habilitation electrique bt ht nacelle" />
+  <meta name="author" content="Z Nacelles" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.znacelles.fr/" />
+
+  <!-- ===== GÉOLOCALISATION ===== -->
+  <meta name="geo.region" content="FR-33" />
+  <meta name="geo.placename" content="Mérignac, Bordeaux, Gironde" />
+  <meta name="geo.position" content="44.8401;-0.6611" />
+  <meta name="ICBM" content="44.8401, -0.6611" />
+
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.znacelles.fr/" />
+  <meta property="og:title" content="Z Nacelles - Location de Camion Nacelle avec Chauffeur" />
+  <meta property="og:description" content="Nacelliste professionnel à Mérignac et Bordeaux. Camion nacelle grande hauteur avec opérateur CACES R486, habilitations électriques et nucléaires." />
+  <meta property="og:image" content="https://www.znacelles.fr/camion-nacelle.webp" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Z Nacelles" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- ===== DONNÉES STRUCTURÉES (SCHEMA.ORG) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.znacelles.fr/#company",
+        "name": "Z Nacelles",
+        "legalName": "Z Nacelles",
+        "description": "Entreprise spécialisée dans la location de camion nacelle grande hauteur avec opérateur certifié CACES R486. Interventions travaux en hauteur, habilitations électriques BT/HT et accès sites nucléaires à Bordeaux, Mérignac et toute la France.",
+        "url": "https://www.znacelles.fr",
+        "telephone": "+33767341655",
+        "email": "z.nacelles@gmail.com",
+        "image": "https://www.znacelles.fr/camion-nacelle.webp",
+        "logo": "https://www.znacelles.fr/logo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "26 avenue Gustave Eiffel",
+          "addressLocality": "Mérignac",
+          "postalCode": "33700",
+          "addressRegion": "Gironde",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.8401,
+          "longitude": -0.6611
+        },
+        "areaServed": ["Mérignac", "Bordeaux", "Gironde", "Nouvelle-Aquitaine", "France"],
+        "priceRange": "Sur devis",
+        "openingHours": "Mo-Su 06:00-21:00"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.znacelles.fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Faut-il posséder le CACES pour louer un camion nacelle chez Z Nacelles ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, aucun CACES n'est requis de votre part. Z Nacelles fournit systématiquement un opérateur professionnel titulaire du CACES® R486 (1B-3B) qui se charge de la conduite, de la mise en place et des manœuvres de la nacelle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Exigez-vous une caution financière ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aucune caution bancaire n'est exigée, contrairement aux loueurs de matériel sans chauffeur qui immobilisent généralement 3 000 € à 5 000 €. Notre opérateur est le seul responsable de l'engin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est votre zone d'intervention ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Basés à Mérignac (33700), nous intervenons principalement sur la Métropole de Bordeaux, le département de la Gironde et la région Nouvelle-Aquitaine, avec une mobilité sur toute la France pour les chantiers industriels et nucléaires."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== POLICE BTP & LEVAGE : BARLOW & INTER ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style is:inline>
+    :root {
+      /* Palette BTP / Levage : sobre, solide, corporate */
+      --clr-navy: #0f2238;
+      --clr-navy-dark: #0a1726;
+      --clr-navy-light: #1b3552;
+      --clr-red: #c5221f;
+      --clr-red-hover: #a81c19;
+      --clr-text-main: #1e293b;
+      --clr-text-muted: #64748b;
+      --clr-text-light: #94a3b8;
+      --clr-bg-white: #ffffff;
+      --clr-bg-alt: #f8fafc;
+      --clr-bg-muted: #f1f5f9;
+      --clr-border: #e2e8f0;
+      --clr-border-dark: #cbd5e1;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --font-heading: 'Barlow', sans-serif;
+      --font-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--clr-bg-white);
+      color: var(--clr-text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 74px; /* Réservation espace mobile */
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .hero-h1, .section-title, .column-title,
+    .btn-solid-navy, .btn-outline-navy, .btn-header-quote,
+    .btn-submit-action, .btn-header-call, .section-tag,
+    .hero-badge-local, .top-strip-right a, .specs-table td,
+    .btn-mobile-action-call, .btn-mobile-action-quote {
+      font-family: var(--font-heading);
+      letter-spacing: -0.01em;
+    }
+
+    @media (min-width: 900px) {
+      body { padding-bottom: 0; }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* BANDEAU SUPÉRIEUR INSTITUTIONNEL */
+    .top-strip {
+      background-color: var(--clr-navy-dark);
+      color: #cbd5e1;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 16px;
+    }
+
+    .top-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-strip-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .top-strip-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-strip-right a {
+      color: #ffffff;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-strip-right a:hover {
+      text-decoration: underline;
+    }
+
+    /* EN-TÊTE PRINCIPAL */
+    .site-header {
+      background-color: var(--clr-navy);
+      border-bottom: 3px solid var(--clr-red);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .main-nav a {
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      padding: 8px 0;
+    }
+
+    .main-nav a:hover {
+      color: #ffffff;
+    }
+
+    .header-ctas {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-header-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 9px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .btn-header-call:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: #ffffff;
+    }
+
+    .btn-header-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--clr-red);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-header-quote:hover {
+      background-color: var(--clr-red-hover);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    /* MENU MOBILE SIMPLE */
+    .mobile-drawer {
+      display: none;
+      background-color: var(--clr-navy-dark);
+      border-bottom: 2px solid var(--clr-red);
+      padding: 20px;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .mobile-drawer.open {
+      display: flex;
+    }
+
+    .mobile-drawer a {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* CONTENEUR & SECTIONS */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-alt {
+      background-color: var(--clr-bg-alt);
+      border-top: 1px solid var(--clr-border);
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .section-header-block {
+      margin-bottom: 44px;
+    }
+
+    .section-header-block.centered {
+      text-align: center;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--clr-red);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      color: var(--clr-navy);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+    }
+
+    /* HERO SECTION PROFESSIONNELLE */
+    .hero-section {
+      background: linear-gradient(180deg, var(--clr-bg-alt) 0%, #ffffff 100%);
+      padding: 60px 0 70px;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-badge-local {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #ffffff;
+      border: 1px solid var(--clr-border-dark);
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--clr-navy);
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--clr-navy);
+      margin-bottom: 20px;
+    }
+
+    .hero-h1 span.emphasis {
+      color: var(--clr-red);
+    }
+
+    .hero-lead {
+      font-size: 1.12rem;
+      color: #334155;
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .btn-solid-navy {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--clr-navy);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 15px 26px;
+      border-radius: var(--radius-sm);
+      transition: background-color 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-solid-navy:hover {
+      background-color: var(--clr-navy-light);
+    }
+
+    .btn-outline-navy {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #ffffff;
+      color: var(--clr-navy);
+      border: 1.5px solid var(--clr-navy);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-navy:hover {
+      background-color: var(--clr-bg-alt);
+    }
+
+    .hero-guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      border-top: 1px solid var(--clr-border);
+      padding-top: 24px;
+    }
+
+    .hero-guarantee-card {
+      font-size: 0.85rem;
+      color: var(--clr-text-muted);
+    }
+
+    .hero-guarantee-card strong {
+      display: block;
+      color: var(--clr-navy);
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-media-box {
+      border: 1px solid var(--clr-border-dark);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-media-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
+
+    .hero-media-caption {
+      padding: 16px 20px;
+      background-color: #ffffff;
+      border-top: 1px solid var(--clr-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-media-caption h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--clr-navy);
+    }
+
+    .hero-media-caption span {
+      font-size: 0.82rem;
+      color: var(--clr-text-muted);
+    }
+
+    /* BANDEAU DE CERTIFICATIONS */
+    .certs-strip {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--clr-border);
+      padding: 22px 0;
+    }
+
+    .certs-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .cert-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    .cert-icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--clr-bg-muted);
+      border: 1px solid var(--clr-border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-navy);
+      flex-shrink: 0;
+    }
+
+    .cert-badge-item strong {
+      display: block;
+      color: var(--clr-navy);
+      font-size: 0.92rem;
+    }
+
+    /* TABLEAU COMPARATIF : AVEC CHAUFFEUR VS SEUL */
+    .comparison-container {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .comparison-column {
+      border-radius: var(--radius-md);
+      padding: 32px;
+      border: 1px solid var(--clr-border);
+    }
+
+    .comparison-column.primary {
+      background-color: #ffffff;
+      border: 2px solid var(--clr-navy);
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .comparison-column.secondary {
+      background-color: var(--clr-bg-alt);
+      border: 1px solid var(--clr-border-dark);
+    }
+
+    .column-header-tag {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+    }
+
+    .column-header-tag.recom {
+      background-color: var(--clr-navy);
+      color: #ffffff;
+    }
+
+    .column-header-tag.standard {
+      background-color: #e2e8f0;
+      color: #475569;
+    }
+
+    .column-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--clr-navy);
+      margin-bottom: 6px;
+    }
+
+    .column-desc {
+      font-size: 0.9rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .criteria-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .criteria-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .criteria-item svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .criteria-item strong {
+      color: var(--clr-navy);
+    }
+
+    /* SECTION FICHE TECHNIQUE CAMION NACELLE */
+    .truck-specs-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 36px;
+    }
+
+    .truck-image-frame {
+      border: 1px solid var(--clr-border-dark);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background-color: #ffffff;
+    }
+
+    .truck-image-frame img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.92rem;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .specs-table th {
+      text-align: left;
+      padding: 12px 14px;
+      color: var(--clr-text-muted);
+      font-weight: 600;
+      width: 45%;
+      background-color: var(--clr-bg-alt);
+    }
+
+    .specs-table td {
+      padding: 12px 14px;
+      color: var(--clr-navy);
+      font-weight: 700;
+    }
+
+    /* SECTION PRESTATIONS DÉTAILLÉES */
+    .services-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-top: 36px;
+    }
+
+    .service-box {
+      background-color: #ffffff;
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-box:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--clr-border-dark);
+    }
+
+    .service-box-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-box-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-box-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--clr-navy);
+      margin-bottom: 10px;
+    }
+
+    .service-box-desc {
+      font-size: 0.92rem;
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .service-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: #334155;
+      margin-bottom: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .service-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-service-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: var(--clr-navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px;
+      background-color: var(--clr-bg-muted);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-service-link:hover {
+      background-color: #e2e8f0;
+    }
+
+    /* SECTION ZONE GÉOGRAPHIQUE */
+    .coverage-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 36px;
+    }
+
+    .coverage-points-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0 30px;
+    }
+
+    .coverage-item {
+      background-color: #ffffff;
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.88rem;
+    }
+
+    .coverage-item strong {
+      display: block;
+      color: var(--clr-navy);
+      font-size: 0.92rem;
+    }
+
+    .coverage-map-frame {
+      border: 1px solid var(--clr-border-dark);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background-color: #ffffff;
+    }
+
+    /* SECTION FORMULAIRE & CONTACT */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    .contact-info-panel {
+      background-color: var(--clr-bg-alt);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+
+    .contact-method-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .contact-method-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .contact-method-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background-color: #ffffff;
+      border: 1px solid var(--clr-border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-navy);
+      flex-shrink: 0;
+    }
+
+    .contact-method-text small {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--clr-text-muted);
+      font-weight: 700;
+    }
+
+    .contact-method-text strong {
+      font-size: 1.05rem;
+      color: var(--clr-navy);
+    }
+
+    .form-card {
+      background-color: #ffffff;
+      border: 1px solid var(--clr-border-dark);
+      border-radius: var(--radius-md);
+      padding: 34px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--clr-navy);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--clr-border-dark);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-base);
+      font-size: 0.95rem;
+      color: var(--clr-text-main);
+      background-color: #ffffff;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--clr-navy);
+    }
+
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .btn-submit-action {
+      width: 100%;
+      background-color: var(--clr-red);
+      color: #ffffff;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-submit-action:hover {
+      background-color: var(--clr-red-hover);
+    }
+
+    .form-feedback-success {
+      display: none;
+      padding: 24px;
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      color: #166534;
+    }
+
+    /* ACCORDÉON FAQ SOBRE */
+    .faq-container {
+      max-width: 800px;
+      margin: 36px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-row {
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      background-color: #ffffff;
+    }
+
+    .faq-button {
+      width: 100%;
+      padding: 18px 20px;
+      text-align: left;
+      background: none;
+      border: none;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--clr-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-icon-sign {
+      font-size: 1.3rem;
+      color: var(--clr-red);
+      font-weight: 400;
+    }
+
+    .faq-body {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 0.92rem;
+      color: var(--clr-text-muted);
+      line-height: 1.6;
+    }
+
+    .faq-row.open .faq-body {
+      display: block;
+    }
+
+    .faq-row.open .faq-icon-sign {
+      transform: rotate(45deg);
+    }
+
+    /* PIED DE PAGE SOBRE */
+    .site-footer {
+      background-color: var(--clr-navy);
+      color: #cbd5e1;
+      padding: 60px 0 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-links-list a {
+      color: #94a3b8;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-list a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom-row {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    /* BARRE D'APPEL FIXE MOBILE (BTP SUR SMARTPHONE) */
+    .mobile-call-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--clr-navy);
+      border-top: 2px solid var(--clr-red);
+      padding: 10px 14px;
+      z-index: 9999;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-call-bar-inner {
+      display: flex;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .btn-mobile-action-call {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--clr-red);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-mobile-action-quote {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: #ffffff;
+      color: var(--clr-navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .truck-specs-layout { grid-template-columns: 1fr; }
+      .coverage-layout { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .services-cards-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 899px) {
+      .main-nav, .btn-header-call, .btn-header-quote { display: none; }
+      .mobile-menu-toggle { display: block; }
+      .mobile-call-bar { display: block; }
+      .comparison-container { grid-template-columns: 1fr; }
+      .hero-guarantees-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 540px) {
+      .form-row { grid-template-columns: 1fr; }
+      .coverage-points-list { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-actions-row { flex-direction: column; }
+      .btn-solid-navy, .btn-outline-navy { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
   <!-- 1. BANDEAU HAUT INSTITUTIONNEL -->
   <aside class="top-strip" aria-label="Informations société et contact">
     <div class="top-strip-inner">
@@ -32,14 +1186,13 @@ import Layout from '../layouts/Layout.astro';
   <header class="site-header" id="header">
     <div class="header-inner">
       <a href="#accueil" class="brand-logo-link" aria-label="Z Nacelles - Accueil">
-        <img src="/images/logo-znacelles-transparent.png" alt="Logo Z Nacelles Nacelliste Professionnel" class="brand-logo-img" width="160" height="48" fetchpriority="high" />
+        <img src="logo.webp" alt="Logo Z Nacelles Nacelliste Professionnel" class="brand-logo-img" width="160" height="48" fetchpriority="high" />
       </a>
 
       <nav class="main-nav" aria-label="Navigation principale">
         <a href="#prestations">Prestations</a>
         <a href="#comparatif">Avec Opérateur</a>
         <a href="#camion">Notre Camion</a>
-        <a href="#galerie">Réalisations</a>
         <a href="#secteurs">Zone d'intervention</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
@@ -63,13 +1216,12 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- MENU MOBILE -->
   <div class="mobile-drawer" id="mobile-drawer">
-    <a href="#prestations" class="mobile-link">Prestations</a>
-    <a href="#comparatif" class="mobile-link">Pourquoi avec Opérateur</a>
-    <a href="#camion" class="mobile-link">Notre Camion Nacelle MAN</a>
-    <a href="#galerie" class="mobile-link">Réalisations terrain</a>
-    <a href="#secteurs" class="mobile-link">Zone d'intervention</a>
-    <a href="#faq" class="mobile-link">Questions fréquentes</a>
-    <a href="#contact" class="mobile-link">Demander un devis</a>
+    <a href="#prestations" onclick="closeDrawer()">Prestations</a>
+    <a href="#comparatif" onclick="closeDrawer()">Pourquoi avec Opérateur</a>
+    <a href="#camion" onclick="closeDrawer()">Notre Camion Nacelle MAN</a>
+    <a href="#secteurs" onclick="closeDrawer()">Zone d'intervention</a>
+    <a href="#faq" onclick="closeDrawer()">Questions fréquentes</a>
+    <a href="#contact" onclick="closeDrawer()">Demander un devis</a>
   </div>
 
   <main>
@@ -87,7 +1239,7 @@ import Layout from '../layouts/Layout.astro';
             </h1>
 
             <p class="hero-lead">
-              Interventions sécurisées en hauteur avec opérateur qualifié CACES® R486. Spécialiste <strong>Télécoms (pylônes, antennes 4G/5G)</strong>, <strong>lignes électriques BT/HT</strong>, BTP et <strong>sites nucléaires</strong>. <strong>Aucune caution bancaire requise</strong>.
+              Interventions sécurisées en hauteur avec opérateur qualifié CACES® R486. Solutions adaptées aux artisans, entreprises du BTP et sites industriels. <strong>Aucune caution bancaire requise</strong>, habilitations électriques BT/HT et accès sites nucléaires.
             </p>
 
             <div class="hero-actions-row">
@@ -118,11 +1270,11 @@ import Layout from '../layouts/Layout.astro';
 
           <div>
             <div class="hero-media-box">
-              <img src="/images/camion-nacelle-flotte.jpg" alt="Vrai camion nacelle MAN rouge Z Nacelles avec stabilisateurs déployés" class="hero-media-img" width="560" height="360" fetchpriority="high" />
+              <img src="camion-nacelle.webp" alt="Camion nacelle porteur MAN en intervention Z Nacelles" class="hero-media-img" width="560" height="360" fetchpriority="high" />
               <div class="hero-media-caption">
                 <div>
                   <h3>Camion Porteur MAN Grande Hauteur</h3>
-                  <span>Véhicule officiel Z Nacelles floqué 07 67 34 16 55</span>
+                  <span>Mise à disposition avec nacelliste diplômé</span>
                 </div>
                 <a href="#camion" style="font-size:0.85rem; font-weight:700; color:var(--clr-navy);">Voir la fiche →</a>
               </div>
@@ -273,7 +1425,7 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="truck-specs-layout">
           <div class="truck-image-frame">
-            <img src="/images/camion-nacelle-flotte.jpg" alt="Véhicule officiel Z Nacelles avec stabilisateurs déployés" width="560" height="400" loading="lazy" />
+            <img src="camion-nacelle.webp" alt="Camion nacelle porteur MAN Z Nacelles avec stabilisateurs" width="560" height="400" loading="lazy" />
           </div>
 
           <div>
@@ -323,113 +1475,81 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- 7. PRESTATIONS DÉTAILLÉES AVEC VRAIES PHOTOS -->
+    <!-- 7. PRESTATIONS DÉTAILLÉES -->
     <section class="section section-alt" id="prestations">
       <div class="container">
         <div class="section-header-block centered">
           <span class="section-tag">Champs d'intervention</span>
           <h2 class="section-title">Nos Prestations de Travail en Hauteur</h2>
           <p class="section-subtitle">
-            Interventions expertes auprès des professionnels des télécoms, de l'énergie, de la couverture et de l'industrie.
+            Nous intervenons aux côtés des artisans, couvreurs, électriciens, façadiers et gestionnaires de patrimoine.
           </p>
         </div>
 
         <div class="services-cards-grid">
-          <!-- PRESTATION 1 : TÉLÉCOMS -->
+          <!-- PRESTATION 1 -->
           <article class="service-box">
-            <img src="/images/intervention-pylone-telecom.jpg" alt="Intervention sur pylône télécom 4G 5G en altitude" class="service-box-img" width="360" height="220" loading="lazy" />
+            <img src="service-hauteur.webp" alt="Travaux en grande hauteur sur toiture et façade" class="service-box-img" width="360" height="200" loading="lazy" />
             <div class="service-box-content">
-              <h3 class="service-box-title">Télécoms &amp; Pylônes 4G / 5G</h3>
+              <h3 class="service-box-title">BTP &amp; Grandes Hauteurs</h3>
               <p class="service-box-desc">
-                Déploiement et maintenance de réseaux télécoms : pose d'antennes 4G/5G, faisceaux hertziens (FH), tirage de câbles coaxiaux et fibre sur pylônes, châteaux d'eau et toitures terrasses.
+                Accès sécurisé pour travaux de couverture, zinguerie, ravalement de façade, pose de bardage, étanchéité, vitrerie grande hauteur et inspection d'ouvrages d'art.
               </p>
               <ul class="service-bullets">
-                <li>• Pose et swap d'antennes relais</li>
-                <li>• Travaux sur pylônes haute altitude</li>
-                <li>• Maintenance préventive et curative</li>
+                <li>• Réfection de toitures et cheminées</li>
+                <li>• Nettoyage de façades et vitrerie</li>
+                <li>• Travaux de charpente et zinguerie</li>
               </ul>
-              <a href="#contact" class="btn-service-link">Demander un devis télécom</a>
+              <a href="#contact" class="btn-service-link">Demander un devis pour ce service</a>
             </div>
           </article>
 
-          <!-- PRESTATION 2 : ÉLECTRICITÉ HT & LIGNES -->
+          <!-- PRESTATION 2 -->
           <article class="service-box">
-            <img src="/images/camion-nuit-lignes-electriques.png" alt="Camion Z Nacelles intervenant de nuit sous lignes haute tension" class="service-box-img" width="360" height="220" loading="lazy" />
+            <img src="service-electrique.webp" alt="Intervention électrique sous tension basse et haute tension" class="service-box-img" width="360" height="200" loading="lazy" />
             <div class="service-box-content">
-              <h3 class="service-box-title">Électricité BT &amp; HT (Lignes &amp; Réseaux)</h3>
+              <h3 class="service-box-title">Électricité BT &amp; HT</h3>
               <p class="service-box-desc">
-                Opérateur habilité NFC 18-510 pour travaux sous tension et à proximité de lignes Basse et Haute Tension. Éclairage public, mâts sportifs, réseaux Enedis/RTE et interventions de nuit.
+                Opérateur habilité NFC 18-510 pour travaux à proximité ou sous tension électrique en Basse Tension et Haute Tension. Éclairage public, mâts sportifs, réseaux Enedis/RTE et télécoms.
               </p>
               <ul class="service-bullets">
-                <li>• Interventions de nuit programmées</li>
-                <li>• Lignes aériennes et armoires HT</li>
-                <li>• Remplacement de projecteurs et mâts</li>
+                <li>• Remplacement de projecteurs et luminaires</li>
+                <li>• Lignes électriques aériennes et armoires</li>
+                <li>• Pylônes télécoms et antennes relais 5G</li>
               </ul>
-              <a href="#contact" class="btn-service-link">Demander un devis électricité</a>
+              <a href="#contact" class="btn-service-link">Demander un devis pour ce service</a>
             </div>
           </article>
 
-          <!-- PRESTATION 3 : BTP & COUVERTURE -->
+          <!-- PRESTATION 3 -->
           <article class="service-box">
-            <img src="/images/equipe-nacelliste-chantier.jpg" alt="Équipe Z Nacelles équipée harnais et casque sur chantier grande hauteur" class="service-box-img" width="360" height="220" loading="lazy" />
+            <img src="service-nucleaire.webp" alt="Intervention en centrale nucléaire EDF" class="service-box-img" width="360" height="200" loading="lazy" />
             <div class="service-box-content">
-              <h3 class="service-box-title">BTP, Toitures &amp; Sites Nucléaires</h3>
+              <h3 class="service-box-title">Sites Nucléaires &amp; Industrie</h3>
               <p class="service-box-desc">
-                Accès sécurisé pour travaux de couverture, bardage, vitres grande hauteur et accès certifié aux centrales nucléaires (CNPE du Blayais, Golfech...) avec habilitations CSQ / CEFRI valides.
+                Accréditations à jour pour interventions en centrales nucléaires (CNPE du Blayais, Golfech...) et sites industriels classés SEVESO. Suivi médical et dosimétrique conforme aux protocoles EDF.
               </p>
               <ul class="service-bullets">
-                <li>• Réfection de toitures et charpentes</li>
-                <li>• Accès CNPE Blayais et sites classés</li>
-                <li>• Respect strict des plans de prévention</li>
+                <li>• Formations CSQ, RP1/RP2 et CEFRI valides</li>
+                <li>• Dossiers d'accès et habilitations de sûreté</li>
+                <li>• Respect des plans de prévention spécifiques</li>
               </ul>
-              <a href="#contact" class="btn-service-link">Demander un devis BTP / Nucléaire</a>
+              <a href="#contact" class="btn-service-link">Demander un devis pour ce service</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 8. GALERIE RÉALISATIONS RÉELLES -->
-    <section class="section" id="galerie">
-      <div class="container">
-        <div class="section-header-block centered">
-          <span class="section-tag">Sur le terrain</span>
-          <h2 class="section-title">Nos Réalisations Récentes</h2>
-          <p class="section-subtitle">
-            Un aperçu de nos chantiers en conditions réelles : haute montagne, nuit, ouvrages maritimes et structures métalliques.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="/images/camion-nuit-lignes-electriques.png" alt="Intervention de nuit pylône haute tension" class="gallery-img" loading="lazy" />
-            <div class="gallery-caption">Opération de nuit HT</div>
-          </div>
-          <div class="gallery-item">
-            <img src="/images/intervention-pylone-telecom.jpg" alt="Chantier pylône télécom en montagne" class="gallery-img" loading="lazy" />
-            <div class="gallery-caption">Pylône télécom altitude</div>
-          </div>
-          <div class="gallery-item">
-            <img src="/images/intervention-structure-metallique.jpg" alt="Structure métallique grande hauteur" class="gallery-img" loading="lazy" />
-            <div class="gallery-caption">Structure métallique BTP</div>
-          </div>
-          <div class="gallery-item">
-            <img src="/images/intervention-hauteur-maritime.jpg" alt="Intervention en zone portuaire maritime" class="gallery-img" loading="lazy" />
-            <div class="gallery-caption">Zone portuaire &amp; maritime</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. ZONE D'INTERVENTION -->
-    <section class="section section-alt" id="secteurs">
+    <!-- 8. ZONE D'INTERVENTION -->
+    <section class="section" id="secteurs">
       <div class="container">
         <div class="coverage-layout">
           <div>
             <span class="section-tag">Secteur géographique</span>
             <h2 class="section-title">Interventions en Gironde et sur Toute la France</h2>
             <p class="section-subtitle">
-              Établis à <strong>Mérignac (33700)</strong>, à l'ouest de l'agglomération bordelaise, nous intervenons avec réactivité sur l'ensemble de la Gironde et assurons une mobilité nationale pour les chantiers télécoms et industriels.
+              Établis à <strong>Mérignac (33700)</strong>, à l'ouest de l'agglomération bordelaise, nous intervenons avec réactivité sur l'ensemble du département de la Gironde et nous déplaçons au niveau national pour les chantiers spécifiques.
             </p>
 
             <div class="coverage-points-list">
@@ -455,7 +1575,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div class="coverage-item">
                 <strong>Mobilité France Entière</strong>
-                Déplacements télécoms &amp; industrie
+                Déplacements longue distance sur devis
               </div>
             </div>
 
@@ -468,15 +1588,15 @@ import Layout from '../layouts/Layout.astro';
 
           <div>
             <div class="coverage-map-frame">
-              <img src="/images/france-map.webp" alt="Carte de couverture nationale et régionale de Z Nacelles" width="500" height="380" loading="lazy" />
+              <img src="france-map.webp" alt="Carte de couverture nationale et régionale de Z Nacelles" width="500" height="380" loading="lazy" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 10. QUESTIONS FRÉQUENTES (FAQ) -->
-    <section class="section" id="faq">
+    <!-- 9. QUESTIONS FRÉQUENTES (FAQ) -->
+    <section class="section section-alt" id="faq">
       <div class="container">
         <div class="section-header-block centered">
           <span class="section-tag">Renseignements pratiques</span>
@@ -487,6 +1607,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="faq-container">
+          <!-- QUESTION 1 -->
           <div class="faq-row open">
             <button class="faq-button" type="button" aria-expanded="true">
               <span>Faut-il posséder le CACES pour faire appel à vos services ?</span>
@@ -497,6 +1618,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
+          <!-- QUESTION 2 -->
           <div class="faq-row">
             <button class="faq-button" type="button" aria-expanded="false">
               <span>Demandez-vous une caution financière ?</span>
@@ -507,6 +1629,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
+          <!-- QUESTION 3 -->
           <div class="faq-row">
             <button class="faq-button" type="button" aria-expanded="false">
               <span>Quels sont les délais d'intervention et d'obtention de devis ?</span>
@@ -517,21 +1640,22 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
+          <!-- QUESTION 4 -->
           <div class="faq-row">
             <button class="faq-button" type="button" aria-expanded="false">
               <span>Pouvez-vous intervenir de nuit ou pendant le week-end ?</span>
               <span class="faq-icon-sign">+</span>
             </button>
             <div class="faq-body">
-              Oui. Nous réalisons régulièrement des interventions de nuit ou en fin de semaine, notamment pour les chantiers sous lignes haute tension, les sites télécoms ou pour des impératifs d'exploitation sans gêne de circulation.
+              Oui. Nous réalisons régulièrement des interventions de nuit ou en fin de semaine, notamment pour les chantiers urbains nécessitant une interruption de trafic ou pour des impératifs d'exploitation commerciale.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 11. CONTACT & DEMANDE DE DEVIS (FORMSUBMIT CONNECTÉ) -->
-    <section class="section section-alt" id="contact">
+    <!-- 10. CONTACT & DEMANDE DE DEVIS -->
+    <section class="section" id="contact">
       <div class="container">
         <div class="section-header-block">
           <span class="section-tag">Devis gratuit sous 2h</span>
@@ -553,7 +1677,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               </div>
               <div class="contact-method-text">
-                <small>Téléphone direct (7j/7)</small>
+                <small>Téléphone direct</small>
                 <a href="tel:+33767341655" style="color:var(--clr-navy); font-weight:700; font-size:1.15rem;">07 67 34 16 55</a>
               </div>
             </div>
@@ -563,7 +1687,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
               <div class="contact-method-text">
-                <small>Email professionnel</small>
+                <small>Email de correspondance</small>
                 <a href="mailto:z.nacelles@gmail.com" style="color:var(--clr-navy); font-weight:700;">z.nacelles@gmail.com</a>
               </div>
             </div>
@@ -578,22 +1702,18 @@ import Layout from '../layouts/Layout.astro';
               </div>
             </div>
 
-            <!-- Google Maps Embed -->
-            <div style="margin-top:20px; border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--clr-border);">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.7!2d-0.6413!3d44.8314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54d86b2c4f2e43%3A0x0!2s26+Avenue+Gustave+Eiffel%2C+33700+M%C3%A9rignac!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
-                width="100%"
-                height="160"
-                style="border:0; display:block;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Z Nacelles Mérignac"
-              ></iframe>
+            <div class="contact-method-item">
+              <div class="contact-method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="contact-method-text">
+                <small>Horaires de permanence</small>
+                <strong>7j/7 de 06h00 à 21h00</strong>
+              </div>
             </div>
           </div>
 
-          <!-- FORMULAIRE FORMSUBMIT FONCTIONNEL -->
+          <!-- FORMULAIRE DE DEVIS SOBRE -->
           <div class="form-card">
             <h3 style="font-size:1.3rem; font-weight:800; color:var(--clr-navy); margin-bottom:6px;">
               Formulaire de Demande de Devis
@@ -602,82 +1722,83 @@ import Layout from '../layouts/Layout.astro';
               Les champs marqués d'un astérisque (*) sont obligatoires.
             </p>
 
-            <form id="contactForm" action="https://formsubmit.co/ajax/z.nacelles@gmail.com" method="POST" novalidate>
-              <input type="hidden" name="_subject" value="Demande de devis nacelle - Site Web Z Nacelles">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_captcha" value="false">
-
+            <form id="form-contact-btp" novalidate>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="nom_client">Nom / Raison Sociale *</label>
-                  <input type="text" id="nom_client" name="nom_ou_societe" class="form-input" placeholder="Ex: Jean Dupont ou Entreprise" required autocomplete="name" />
+                  <label class="form-label" for="nom-client">Nom / Raison Sociale *</label>
+                  <input type="text" id="nom-client" class="form-input" placeholder="Ex: Jean Dupont ou Société BTP" required autocomplete="name" />
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="tel_client">Numéro de téléphone *</label>
-                  <input type="tel" id="tel_client" name="telephone" class="form-input" placeholder="06 XX XX XX XX" required autocomplete="tel" />
+                  <label class="form-label" for="tel-client">Numéro de téléphone *</label>
+                  <input type="tel" id="tel-client" class="form-input" placeholder="06 XX XX XX XX" required autocomplete="tel" />
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="email_client">Adresse email *</label>
-                  <input type="email" id="email_client" name="email" class="form-input" placeholder="contact@entreprise.fr" required autocomplete="email" />
+                  <label class="form-label" for="email-client">Adresse email</label>
+                  <input type="email" id="email-client" class="form-input" placeholder="contact@entreprise.fr" autocomplete="email" />
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="ville_client">Lieu de l'intervention *</label>
-                  <input type="text" id="ville_client" name="lieu_intervention" class="form-input" placeholder="Commune ou code postal" required />
+                  <label class="form-label" for="ville-chantier">Lieu de l'intervention *</label>
+                  <input type="text" id="ville-chantier" class="form-input" placeholder="Commune ou code postal" required />
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="type_travaux">Type d'intervention</label>
-                <select id="type_travaux" name="type_intervention" class="form-select">
-                  <option value="Télécoms / Pylônes / Antennes 4G-5G">Télécoms &amp; Pylônes 4G/5G</option>
-                  <option value="Électricité BT/HT et Lignes">Électricité BT/HT et Réseaux</option>
-                  <option value="BTP / Toiture / Façade">BTP (Toiture, Façade, Zinguerie)</option>
-                  <option value="Centrale Nucléaire / Site SEVESO">Site Nucléaire / Industrie sensible</option>
-                  <option value="Autre prestation">Autre besoin spécifique</option>
+                <label class="form-label" for="type-prestation">Type de travaux</label>
+                <select id="type-prestation" class="form-select">
+                  <option value="Travaux de toiture ou façade BTP">Travaux BTP (Toiture, Façade, Zinguerie)</option>
+                  <option value="Électricité et réseaux BT/HT">Électricité BT/HT et Éclairage</option>
+                  <option value="Intervention site nucléaire ou industriel">Centrale Nucléaire / Site SEVESO</option>
+                  <option value="Élagage ou espaces verts">Élagage d'arbres grande hauteur</option>
+                  <option value="Autre demande">Autre prestation spécifique</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="message_client">Description du besoin (Hauteur, accès, date) *</label>
-                <textarea id="message_client" name="message" class="form-textarea" placeholder="Indiquez la hauteur estimée, les contraintes d'accès et la date souhaitée..." required></textarea>
+                <label class="form-label" for="message-chantier">Description du besoin (Hauteur estimée, accès, date souhaitée) *</label>
+                <textarea id="message-chantier" class="form-textarea" placeholder="Précisez la hauteur approximative, les contraintes d'accès (portail, sol) et la date d'intervention souhaitée..." required></textarea>
               </div>
 
-              <button type="submit" class="btn-submit-action" id="submitBtn">
+              <button type="submit" class="btn-submit-action" id="btn-submit-action">
                 Transmettre ma demande de devis
               </button>
-
-              <div id="formStatus" style="display:none; padding:14px; border-radius:4px; font-size:0.92rem; text-align:center; margin-top:12px; line-height:1.5;"></div>
 
               <p style="font-size:0.78rem; color:var(--clr-text-muted); text-align:center; margin-top:12px;">
                 Devis gratuit sans engagement • Réponse téléphonique sous 2 heures
               </p>
             </form>
+
+            <div class="form-feedback-success" id="form-feedback-success">
+              <h4 style="font-size:1.15rem; font-weight:700; margin-bottom:6px;">Votre demande a bien été transmise</h4>
+              <p style="font-size:0.9rem;">
+                Notre responsable d'exploitation étudie votre besoin et vous recontacte au numéro indiqué sous 2 heures ouvrées.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- 12. PIED DE PAGE -->
+  <!-- 11. PIED DE PAGE -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <img src="/images/logo-znacelles-transparent.png" alt="Z Nacelles - Nacelliste Professionnel" style="height: 44px; width:auto; margin-bottom:14px;" loading="lazy" />
+          <img src="logo.webp" alt="Z Nacelles - Nacelliste Professionnel" style="height: 44px; width:auto; margin-bottom:14px;" loading="lazy" />
           <p style="font-size:0.88rem; line-height:1.6; color:#94a3b8; max-width:320px;">
-            Prestation de location de camion nacelle avec opérateur CACES® R486. Interventions télécoms, électricité BT/HT, grandes hauteurs et nucléaire.
+            Prestation de location de camion nacelle avec opérateur CACES® R486. Interventions grandes hauteurs, travaux électriques BT/HT et accès sites nucléaires.
           </p>
         </div>
 
         <div class="footer-col">
           <h4>Prestations</h4>
           <ul class="footer-links-list">
-            <li><a href="#prestations">Pylônes Télécoms 4G / 5G</a></li>
-            <li><a href="#prestations">Électricité BT &amp; HT (Nuit &amp; Jour)</a></li>
             <li><a href="#prestations">Camion Nacelle avec Chauffeur</a></li>
+            <li><a href="#prestations">Interventions Grandes Hauteurs</a></li>
+            <li><a href="#prestations">Habilitations Électriques BT &amp; HT</a></li>
             <li><a href="#prestations">Accès Centrales Nucléaires</a></li>
           </ul>
         </div>
@@ -688,7 +1809,7 @@ import Layout from '../layouts/Layout.astro';
             <li><a href="#secteurs">Mérignac (33700)</a></li>
             <li><a href="#secteurs">Bordeaux Métropole</a></li>
             <li><a href="#secteurs">Gironde (33)</a></li>
-            <li><a href="#secteurs">France Entière</a></li>
+            <li><a href="#secteurs">Nouvelle-Aquitaine &amp; France</a></li>
           </ul>
         </div>
 
@@ -703,13 +1824,13 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="footer-bottom-row">
-        <p>© 2026 Z Nacelles. Tous droits réservés.</p>
+        <p>© 2025 Z Nacelles. Tous droits réservés.</p>
         <p>CACES® R486 • Habilitation BT &amp; HT NFC 18-510 • Accréditation Nucléaire</p>
       </div>
     </div>
   </footer>
 
-  <!-- 13. BARRE D'ACTION MOBILE FIXE -->
+  <!-- 12. BARRE D'ACTION MOBILE FLOTTANTE -->
   <div class="mobile-call-bar" aria-label="Contact rapide">
     <div class="mobile-call-bar-inner">
       <a href="tel:+33767341655" class="btn-mobile-action-call">
@@ -722,116 +1843,86 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
-  <script>
+  <!-- SCRIPTS SOBRES ET RAPIDES -->
+  <script is:inline>
+    'use strict';
+
     // 1. Menu Mobile
-    const toggleBtn = document.getElementById('btn-toggle-menu');
-    const drawer = document.getElementById('mobile-drawer');
+    var toggleBtn = document.getElementById('btn-toggle-menu');
+    var drawer = document.getElementById('mobile-drawer');
 
-    toggleBtn?.addEventListener('click', () => {
-      const isOpen = drawer?.classList.toggle('open');
-      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    toggleBtn.addEventListener('click', function() {
+      var isOpen = drawer.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        drawer?.classList.remove('open');
-        toggleBtn?.setAttribute('aria-expanded', 'false');
-      });
-    });
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
 
-    // 2. Accordéon FAQ
-    document.querySelectorAll('.faq-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const row = button.closest('.faq-row');
-        const wasOpen = row?.classList.contains('open');
+    // 2. Accordéon FAQ sobre
+    document.querySelectorAll('.faq-button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var row = this.closest('.faq-row');
+        var wasOpen = row.classList.contains('open');
 
-        document.querySelectorAll('.faq-row').forEach(r => {
+        document.querySelectorAll('.faq-row').forEach(function(r) {
           r.classList.remove('open');
-          r.querySelector('.faq-button')?.setAttribute('aria-expanded', 'false');
+          r.querySelector('.faq-button').setAttribute('aria-expanded', 'false');
         });
 
-        if (!wasOpen && row) {
+        if (!wasOpen) {
           row.classList.add('open');
-          button.setAttribute('aria-expanded', 'true');
+          this.setAttribute('aria-expanded', 'true');
         }
       });
     });
 
-    // 3. Formulaire FormSubmit en direct
-    const contactForm = document.getElementById('contactForm') as HTMLFormElement;
-    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
-    const formStatus = document.getElementById('formStatus') as HTMLDivElement;
+    // 3. Traitement formulaire
+    var formEl = document.getElementById('form-contact-btp');
+    var successEl = document.getElementById('form-feedback-success');
+    var submitButton = document.getElementById('btn-submit-action');
 
-    contactForm?.addEventListener('submit', async (e) => {
+    formEl.addEventListener('submit', function(e) {
       e.preventDefault();
-      if (!submitBtn) return;
 
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Transmission en cours…';
+      var nom = document.getElementById('nom-client').value.trim();
+      var tel = document.getElementById('tel-client').value.trim();
+      var email = document.getElementById('email-client').value.trim();
+      var ville = document.getElementById('ville-chantier').value.trim();
+      var prestation = document.getElementById('type-prestation').value;
+      var message = document.getElementById('message-chantier').value.trim();
 
-      if (formStatus) formStatus.style.display = 'none';
-
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch('https://formsubmit.co/ajax/z.nacelles@gmail.com', {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          submitBtn.innerHTML = '✓ Demande Transmise !';
-          submitBtn.style.background = '#16a34a';
-
-          if (formStatus) {
-            formStatus.style.display = 'block';
-            formStatus.style.background = '#f0fdf4';
-            formStatus.style.border = '1px solid #bbf7d0';
-            formStatus.style.color = '#166534';
-            formStatus.innerHTML = '<strong>Merci !</strong> Votre demande a bien été transmise à <strong>z.nacelles@gmail.com</strong>. Nous vous recontactons sous 2 heures.';
-          }
-
-          contactForm.reset();
-
-          setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-            submitBtn.style.background = '';
-          }, 6000);
-        } else {
-          throw new Error('Erreur de transmission');
-        }
-      } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Réessayer';
-        submitBtn.style.background = '#dc2626';
-
-        if (formStatus) {
-          formStatus.style.display = 'block';
-          formStatus.style.background = '#fef2f2';
-          formStatus.style.border = '1px solid #fecaca';
-          formStatus.style.color = '#991b1b';
-          formStatus.innerHTML = 'Une erreur est survenue. Contactez-nous directement par téléphone au <a href="tel:+33767341655" style="font-weight:700; text-decoration:underline;">07 67 34 16 55</a>.';
-        }
-
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.style.background = '';
-        }, 5000);
+      if (!nom || !tel || !ville || !message) {
+        alert('Veuillez renseigner votre nom, téléphone, commune et votre besoin.');
+        return;
       }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Transmission en cours…';
+
+      var subject = encodeURIComponent('Demande de devis nacelle - ' + nom + ' (' + ville + ')');
+      var body = encodeURIComponent('Nom: ' + nom + '\nTel: ' + tel + '\nEmail: ' + email + '\nVille: ' + ville + '\nPrestation: ' + prestation + '\n\nMessage:\n' + message);
+      var mailtoUrl = 'mailto:z.nacelles@gmail.com?subject=' + subject + '&body=' + body;
+
+      setTimeout(function() {
+        formEl.style.display = 'none';
+        successEl.style.display = 'block';
+        window.location.href = mailtoUrl;
+      }, 600);
     });
 
-    // 4. Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // 4. Défilement fluide des ancres
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
+        var targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
+        var targetElement = document.querySelector(targetId);
         if (targetElement) {
           e.preventDefault();
-          const headerOffset = document.getElementById('header')?.offsetHeight || 76;
-          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          var headerOffset = document.getElementById('header').offsetHeight;
+          var elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({
             top: elementPosition - headerOffset - 10,
             behavior: 'smooth'
@@ -840,4 +1931,5 @@ import Layout from '../layouts/Layout.astro';
       });
     });
   </script>
-</Layout>
+</body>
+</html>
