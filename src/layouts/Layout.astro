@@ -11,160 +11,96 @@ const { title, description } = Astro.props;
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{title}</title>
   <meta name="description" content={description}>
 
+  <!-- Référencement local & Geo Tags -->
+  <meta name="geo.region" content="FR-33">
+  <meta name="geo.placename" content="Mérignac, Bordeaux, Gironde">
+  <meta name="geo.position" content="44.8401;-0.6611">
+  <meta name="ICBM" content="44.8401, -0.6611">
+  <link rel="canonical" href="https://www.znacelles.fr/">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Z NACELLES | Nacelliste Professionnel">
+  <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.znacelles.fr/">
+  <meta property="og:image" content="https://www.znacelles.fr/images/camion-nacelle-flotte.jpg">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Z NACELLES">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#0f2238">
 
-  <!-- Google Fonts -->
+  <!-- Polices BTP & Levage : Barlow & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Données structurées Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "https://www.znacelles.fr/#company",
+        "name": "Z Nacelles",
+        "legalName": "Z Nacelles",
+        "description": "Entreprise spécialisée dans la location de camion nacelle grande hauteur avec opérateur CACES R486. Interventions télécoms, électricité BT/HT et sites nucléaires à Bordeaux, Mérignac et toute la France.",
+        "url": "https://www.znacelles.fr",
+        "telephone": "+33767341655",
+        "email": "z.nacelles@gmail.com",
+        "image": "https://www.znacelles.fr/images/camion-nacelle-flotte.jpg",
+        "logo": "https://www.znacelles.fr/images/logo-znacelles-transparent.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "26 avenue Gustave Eiffel",
+          "addressLocality": "Mérignac",
+          "postalCode": "33700",
+          "addressRegion": "Gironde",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 44.8401,
+          "longitude": -0.6611
+        },
+        "areaServed": ["Mérignac", "Bordeaux", "Gironde", "Nouvelle-Aquitaine", "France"],
+        "priceRange": "Sur devis",
+        "openingHours": "Mo-Su 06:00-21:00"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.znacelles.fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Faut-il posséder le CACES pour louer un camion nacelle chez Z Nacelles ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, aucun CACES n'est requis de votre part. Z Nacelles fournit systématiquement un opérateur certifié CACES R486 (1B-3B) qui prend en charge la conduite, la stabilisation et la manœuvre."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Exigez-vous une caution bancaire ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aucune caution bancaire n'est demandée, contrairement aux loueurs sans chauffeur qui bloquent 3 000 € à 5 000 €. Notre opérateur est le seul responsable de l'engin."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <slot />
-
-  <script>
-    // Navbar scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav?.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-
-    // Burger menu toggle
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('navLinks');
-    burger?.addEventListener('click', () => {
-      burger.classList.toggle('open');
-      navLinks?.classList.toggle('open');
-      burger.setAttribute('aria-expanded', String(navLinks?.classList.contains('open')));
-    });
-    navLinks?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        burger?.classList.remove('open');
-        navLinks?.classList.remove('open');
-        burger?.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Smooth scroll with offset
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if (href && href !== '#') {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
-            window.scrollTo({ top, behavior: 'smooth' });
-          }
-        }
-      });
-    });
-
-    // Scroll reveal observer
-    const srElements = document.querySelectorAll('.sr');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    srElements.forEach(el => observer.observe(el));
-
-    // Back to top button
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      toTop?.classList.toggle('show', window.scrollY > 450);
-    }, { passive: true });
-    toTop?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Real Contact Form AJAX Submission (FormSubmit)
-    const contactForm = document.getElementById('contactForm') as HTMLFormElement;
-    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
-    const formStatus = document.getElementById('formStatus') as HTMLDivElement;
-
-    contactForm?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (!submitBtn) return;
-
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Envoi en cours... ⏳';
-
-      if (formStatus) {
-        formStatus.style.display = 'none';
-      }
-
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch('https://formsubmit.co/ajax/z.nacelles@gmail.com', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          submitBtn.innerHTML = '✓ Demande Envoyée !';
-          submitBtn.style.background = '#25d366';
-          
-          if (formStatus) {
-            formStatus.style.display = 'block';
-            formStatus.style.background = 'rgba(37, 211, 102, 0.12)';
-            formStatus.style.border = '1px solid rgba(37, 211, 102, 0.4)';
-            formStatus.style.color = '#25d366';
-            formStatus.innerHTML = '<strong>Merci !</strong> Votre demande a bien été transmise à <strong>z.nacelles@gmail.com</strong>. Je vous recontacte dans les plus brefs délais.';
-          }
-          
-          contactForm.reset();
-
-          setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-            submitBtn.style.background = '';
-          }, 6000);
-        } else {
-          throw new Error('Server error');
-        }
-      } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Réessayer';
-        submitBtn.style.background = '#e52534';
-        
-        if (formStatus) {
-          formStatus.style.display = 'block';
-          formStatus.style.background = 'rgba(229, 37, 52, 0.12)';
-          formStatus.style.border = '1px solid rgba(229, 37, 52, 0.4)';
-          formStatus.style.color = '#ff6b7a';
-          formStatus.innerHTML = 'Une erreur est survenue lors de l\'envoi. Contactez-moi directement par téléphone au <a href="tel:+33767341655" style="color:#00d4ff;text-decoration:underline;">07 67 34 16 55</a> ou par email à <a href="mailto:z.nacelles@gmail.com" style="color:#00d4ff;text-decoration:underline;">z.nacelles@gmail.com</a>.';
-        }
-
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.style.background = '';
-        }, 5000);
-      }
-    });
-  </script>
 </body>
 </html>
-
-<style is:global>
-  @import '../styles/global.css';
-</style>
