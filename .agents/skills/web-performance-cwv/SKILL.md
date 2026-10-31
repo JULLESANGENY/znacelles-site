@@ -31,3 +31,4 @@ Ce skill garantit que le site Z Nacelles charge instantanément sur mobile en 4G
 - Zéro framework JS lourd côté client (React/Vue non nécessaires pour cette landing page).
 - Vanilla JavaScript pur (< 3 Ko) pour le menu mobile et l'accordéon FAQ.
 - Soumission AJAX formulaire asynchrone avec feedback immédiat sans rechargement de page.
+

@@ -38,3 +38,4 @@ Vérifier systématiquement la présence et la validité des schémas :
 - Catégorie principale : **Service de location de nacelles élévatrices** ou **Entreprise de travaux publics**
 - Catégories secondaires : **Location de matériel pour entrepreneurs**, **Électricien** (si BT/HT), **Élagueur**.
 - Rayon de service : Mérignac (33700), Bordeaux (33000), Gironde (33).
+
