@@ -945,8 +945,55 @@
     }
 
     .form-textarea {
-      min-height: 110px;
+      min-height: 80px;
       resize: vertical;
+    }
+
+    .form-urgent-call-box {
+      background-color: var(--clr-bg-alt);
+      border: 1px solid var(--clr-border-dark);
+      border-left: 4px solid var(--clr-red);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .form-urgent-text {
+      font-size: 0.88rem;
+      color: var(--clr-text-main);
+      line-height: 1.4;
+    }
+
+    .form-urgent-link {
+      color: var(--clr-navy);
+      font-weight: 800;
+      font-size: 1.05rem;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: underline;
+    }
+
+    .form-trust-pills {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--clr-text-muted);
+    }
+
+    .form-trust-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .btn-submit-action {
@@ -1231,7 +1278,7 @@
         <div class="hero-grid">
           <div>
             <div class="hero-badge-local">
-              NACELLISTE PROFESSIONNEL • MÉRIGNAC &amp; BORDEAUX (33)
+              NACELLISTE PROFESSIONNEL • BORDEAUX &amp; GIRONDE • JUSQU'À 47 MÈTRES
             </div>
 
             <h1 class="hero-h1">
@@ -1239,7 +1286,7 @@
             </h1>
 
             <p class="hero-lead">
-              Interventions sécurisées en hauteur avec opérateur qualifié CACES® R486. Solutions adaptées aux artisans, entreprises du BTP et sites industriels. habilitations électriques BT/HT et accès sites nucléaires.
+              Interventions sécurisées jusqu'à <strong>47 mètres</strong> avec opérateur certifié CACES® R486. Solutions adaptées aux artisans, entreprises du BTP et sites industriels. Habilitations électriques BT/HT et accès sites nucléaires.
             </p>
 
             <div class="hero-actions-row">
@@ -1718,9 +1765,21 @@
             <h3 style="font-size:1.3rem; font-weight:800; color:var(--clr-navy); margin-bottom:6px;">
               Formulaire de Demande de Devis
             </h3>
-            <p style="font-size:0.88rem; color:var(--clr-text-muted); margin-bottom:24px;">
-              Les champs marqués d'un astérisque (*) sont obligatoires.
+            <p style="font-size:0.88rem; color:var(--clr-text-muted); margin-bottom:18px;">
+              Tarif personnalisé et confirmation de disponibilité en moins de 2 heures ouvrées.
             </p>
+
+            <!-- Encadré d'urgence CRO -->
+            <div class="form-urgent-call-box">
+              <div class="form-urgent-text">
+                <strong>Besoin d'un tarif immédiat ou urgence chantier ?</strong><br />
+                Ligne directe opérateur joignable 7j/7 de 06h à 21h.
+              </div>
+              <a href="tel:+33767341655" class="form-urgent-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                07 67 34 16 55
+              </a>
+            </div>
 
             <form id="form-contact-btp" action="https://formsubmit.co/ajax/z.nacelles@gmail.com" method="POST" novalidate>
               <!-- Configuration FormSubmit pour réception automatique par email -->
@@ -1731,7 +1790,7 @@
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="nom-client">Nom / Raison Sociale *</label>
-                  <input type="text" id="nom-client" name="Nom / Société" class="form-input" placeholder="Ex: Jean Dupont ou Société BTP" required autocomplete="name" />
+                  <input type="text" id="nom-client" name="Nom / Société" class="form-input" placeholder="Ex: Jean Dupont ou SARL BTP" required autocomplete="name" />
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="tel-client">Numéro de téléphone *</label>
@@ -1750,29 +1809,42 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="form-label" for="type-prestation">Type de travaux</label>
-                <select id="type-prestation" name="Type de prestation" class="form-select">
-                  <option value="Travaux de toiture ou façade BTP">Travaux BTP (Toiture, Façade, Zinguerie)</option>
-                  <option value="Électricité et réseaux BT/HT">Électricité BT/HT et Éclairage</option>
-                  <option value="Intervention site nucléaire ou industriel">Centrale Nucléaire / Site SEVESO</option>
-                  <option value="Élagage ou espaces verts">Élagage d'arbres grande hauteur</option>
-                  <option value="Autre demande">Autre prestation spécifique</option>
-                </select>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="type-prestation">Type de travaux</label>
+                  <select id="type-prestation" name="Type de prestation" class="form-select">
+                    <option value="Travaux BTP (Toiture, Façade, Zinguerie)">Travaux BTP (Toiture, Façade, Zinguerie)</option>
+                    <option value="Électricité et réseaux BT/HT">Électricité BT/HT et Éclairage</option>
+                    <option value="Centrale Nucléaire / Site SEVESO">Centrale Nucléaire / Site SEVESO</option>
+                    <option value="Élagage ou espaces verts">Élagage d'arbres grande hauteur</option>
+                    <option value="Autre demande">Autre prestation spécifique</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="hauteur-estimee">Hauteur de travail estimée</label>
+                  <select id="hauteur-estimee" name="Hauteur estimée" class="form-select">
+                    <option value="Moins de 20 mètres">Moins de 20 mètres (Standard toiture / façade)</option>
+                    <option value="20 à 35 mètres">20 à 35 mètres (Bâtiments collectifs / hangars)</option>
+                    <option value="Jusqu'à 47 mètres (Grande Hauteur)">35 à 47 mètres (Grande Hauteur porteur MAN)</option>
+                    <option value="À évaluer ensemble">À évaluer avec l'opérateur</option>
+                  </select>
+                </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="message-chantier">Description du besoin (Hauteur estimée, accès, date souhaitée) *</label>
-                <textarea id="message-chantier" name="Description du besoin" class="form-textarea" placeholder="Précisez la hauteur approximative, les contraintes d'accès (portail, sol) et la date d'intervention souhaitée..." required></textarea>
+                <label class="form-label" for="message-chantier">Précisions éventuelles (accès, date) <span style="font-weight:400; color:var(--clr-text-muted);">(Optionnel)</span></label>
+                <textarea id="message-chantier" name="Description du besoin" class="form-textarea" placeholder="Précisez la date souhaitée ou les contraintes d'accès (portail, sol)..."></textarea>
               </div>
 
               <button type="submit" class="btn-submit-action" id="btn-submit-action">
-                Transmettre ma demande de devis
+                Recevoir mon devis gratuit (Réponse sous 2h) →
               </button>
 
-              <p style="font-size:0.78rem; color:var(--clr-text-muted); text-align:center; margin-top:12px;">
-                Devis gratuit sans engagement • Réponse téléphonique sous 2 heures
-              </p>
+              <div class="form-trust-pills">
+                <span class="form-trust-pill-item">🔒 Sans engagement</span>
+                <span class="form-trust-pill-item">✓ Chauffeur CACES® inclus</span>
+                <span class="form-trust-pill-item">⚡ Réponse sous 2h ouvrées</span>
+              </div>
             </form>
 
             <div class="form-feedback-success" id="form-feedback-success">
@@ -1895,10 +1967,9 @@
       var nom = document.getElementById('nom-client').value.trim();
       var tel = document.getElementById('tel-client').value.trim();
       var ville = document.getElementById('ville-chantier').value.trim();
-      var message = document.getElementById('message-chantier').value.trim();
 
-      if (!nom || !tel || !ville || !message) {
-        alert('Veuillez renseigner votre nom, téléphone, commune et votre besoin.');
+      if (!nom || !tel || !ville) {
+        alert('Veuillez renseigner votre nom, votre numéro de téléphone et la commune du chantier.');
         return;
       }
 
