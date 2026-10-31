@@ -1215,6 +1215,158 @@
       color: #64748b;
     }
 
+    .footer-dot-sep {
+      margin: 0 8px;
+      opacity: 0.5;
+    }
+
+    .footer-legal-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      padding: 0;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal-btn:hover,
+    .footer-legal-btn:focus-visible {
+      color: #ffffff;
+    }
+
+    .mobile-drawer-legal-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 10px 0;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      transition: color 0.2s ease;
+    }
+
+    .mobile-drawer-legal-btn:hover {
+      color: #ffffff;
+    }
+
+    /* MODALE MENTIONS LÉGALES & RGPD */
+    .legal-dialog {
+      border: none;
+      border-radius: var(--radius-lg);
+      padding: 0;
+      max-width: 720px;
+      width: calc(100% - 32px);
+      max-height: 85vh;
+      background: #ffffff;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .legal-dialog::backdrop {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .legal-dialog-content {
+      display: flex;
+      flex-direction: column;
+      max-height: 85vh;
+    }
+
+    .legal-dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      background: var(--clr-navy);
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .legal-dialog-header h2 {
+      font-size: 1.2rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .btn-close-legal {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #ffffff;
+      font-size: 1.1rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-close-legal:hover,
+    .btn-close-legal:focus-visible {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .legal-dialog-body {
+      padding: 24px;
+      overflow-y: auto;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--clr-text-main);
+    }
+
+    .legal-dialog-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--clr-navy);
+      margin: 20px 0 8px 0;
+    }
+
+    .legal-dialog-body h3:first-child {
+      margin-top: 0;
+    }
+
+    .legal-dialog-body p {
+      margin-bottom: 10px;
+      color: #334155;
+    }
+
+    .legal-dialog-body ul {
+      margin: 0 0 14px 20px;
+      color: #334155;
+    }
+
+    .legal-dialog-body li {
+      margin-bottom: 6px;
+    }
+
+    .legal-dialog-body a {
+      color: var(--clr-navy);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .legal-dialog-footer {
+      padding: 14px 24px;
+      background: var(--clr-bg-alt);
+      border-top: 1px solid var(--clr-border);
+      display: flex;
+      justify-content: flex-end;
+    }
+
     /* BARRE D'APPEL FIXE MOBILE (BTP SUR SMARTPHONE) */
     .mobile-call-bar {
       display: none;
@@ -1355,6 +1507,7 @@
     <a href="#secteurs" onclick="closeDrawer()">Zone d'intervention</a>
     <a href="#faq" onclick="closeDrawer()">Questions fréquentes</a>
     <a href="#contact" onclick="closeDrawer()">Demander un devis</a>
+    <button type="button" class="mobile-drawer-legal-btn" onclick="closeDrawer(); document.getElementById('btn-open-legal').click();">Mentions Légales &amp; RGPD</button>
   </div>
 
   <main>
@@ -1987,11 +2140,70 @@
       </div>
 
       <div class="footer-bottom-row">
-        <p>© 2025 Z Nacelles. Tous droits réservés.</p>
+        <div>
+          <span>© 2026 Z Nacelles. Tous droits réservés.</span>
+          <span class="footer-dot-sep">•</span>
+          <button type="button" id="btn-open-legal" class="footer-legal-btn">Mentions Légales &amp; RGPD</button>
+        </div>
         <p>CACES® R486 • Habilitation BT &amp; HT NFC 18-510 • Accréditation Nucléaire</p>
       </div>
     </div>
   </footer>
+
+  <!-- MODALE MENTIONS LÉGALES & RGPD -->
+  <dialog id="modal-legal" class="legal-dialog" aria-labelledby="legal-dialog-title">
+    <div class="legal-dialog-content">
+      <div class="legal-dialog-header">
+        <h2 id="legal-dialog-title">Mentions Légales &amp; Confidentialité</h2>
+        <button type="button" id="btn-close-legal" class="btn-close-legal" aria-label="Fermer la fenêtre">✕</button>
+      </div>
+      <div class="legal-dialog-body">
+        <h3>1. Éditeur du Site</h3>
+        <p>Le site internet <strong>https://www.znacelles.fr</strong> est édité par la société <strong>Z Nacelles</strong>, spécialisée dans la prestation de location de camion nacelle grande hauteur avec chauffeur professionnel.</p>
+        <ul>
+          <li><strong>Dénomination :</strong> Z Nacelles</li>
+          <li><strong>Siège opérationnel :</strong> 26 avenue Gustave Eiffel, 33700 Mérignac, Gironde, France</li>
+          <li><strong>Téléphone direct :</strong> <a href="tel:+33767341655">07 67 34 16 55</a></li>
+          <li><strong>Courriel :</strong> <a href="mailto:z.nacelles@gmail.com">z.nacelles@gmail.com</a></li>
+          <li><strong>Directeur de la publication :</strong> Direction Z Nacelles</li>
+        </ul>
+
+        <h3>2. Hébergement du Site</h3>
+        <p>Le présent site est hébergé par la société <strong>Hostinger International Ltd</strong> :</p>
+        <ul>
+          <li><strong>Adresse de l'hébergeur :</strong> 61 Lordou Vironos Street, 6023 Larnaca, Chypre</li>
+          <li><strong>Site internet :</strong> <a href="https://www.hostinger.fr" target="_blank" rel="noopener noreferrer">www.hostinger.fr</a></li>
+        </ul>
+
+        <h3>3. Cadre Réglementaire &amp; Sécurité</h3>
+        <p>L'ensemble de nos prestations d'élévation de personnes et de travaux en hauteur est opéré dans le strict respect des normes en vigueur :</p>
+        <ul>
+          <li>Conducteur titulaire du certificat d'aptitude <strong>CACES® R486</strong> (catégories 1B et 3B).</li>
+          <li>Habilitations électriques <strong>NFC 18-510</strong> pour travaux sous tension et au voisinage (Basse Tension BT et Haute Tension HT).</li>
+          <li>Accréditations et formations de sûreté requises pour l'accès aux <strong>centrales nucléaires</strong> (EDF) et sites classés <strong>SEVESO</strong>.</li>
+          <li>Vérifications Générales Périodiques (VGP) semestrielles à jour pour l'ensemble du matériel de levage.</li>
+        </ul>
+
+        <h3>4. Protection des Données Personnelles (RGPD)</h3>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée :</p>
+        <ul>
+          <li><strong>Finalité du traitement :</strong> Les données collectées via le formulaire de devis (nom/société, téléphone, email, commune d'intervention et spécificités du besoin) sont réservées exclusivement à l'étude technique, à l'établissement de devis et au rappel commercial par Z Nacelles.</li>
+          <li><strong>Confidentialité absolue :</strong> Vos informations ne sont jamais cédées, louées ou commercialisées à des tiers.</li>
+          <li><strong>Durée de conservation :</strong> Les données liées aux demandes de devis sont conservées pendant la durée nécessaire au suivi du dossier (maximum 3 ans à compter du dernier contact).</li>
+          <li><strong>Exercice de vos droits :</strong> Vous disposez d'un droit d'accès, de rectification, de portabilité et de suppression de vos données personnelles. Vous pouvez exercer ce droit à tout moment par simple email à <a href="mailto:z.nacelles@gmail.com">z.nacelles@gmail.com</a> ou par appel au <a href="tel:+33767341655">07 67 34 16 55</a>.</li>
+        </ul>
+
+        <h3>5. Propriété Intellectuelle</h3>
+        <p>L'ensemble des contenus figurant sur ce site (textes, visuels, logo officiel Z Nacelles, structure et charte graphique) relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Toute reproduction ou représentation, intégrale ou partielle, par quelque procédé que ce soit, sans l'accord préalable écrit de Z Nacelles est illicite et constitue une contrefaçon sanctionnée par le Code de la Propriété Intellectuelle (Art. L.335-2).</p>
+
+        <h3>6. Cookies &amp; Traceurs</h3>
+        <p>Le site Z Nacelles respecte votre vie privée : il n'intègre aucun cookie de ciblage publicitaire ni traceur commercial tiers. Seuls des éléments purement techniques concourant au fonctionnement et à la sécurité du site peuvent être générés, dispensés de recueil de consentement selon les directives de la CNIL.</p>
+      </div>
+      <div class="legal-dialog-footer">
+        <button type="button" id="btn-close-legal-bottom" class="btn-solid-navy">Fermer</button>
+      </div>
+    </div>
+  </dialog>
 
   <!-- 12. BARRE D'ACTION MOBILE FLOTTANTE -->
   <div class="mobile-call-bar" aria-label="Contact rapide">
@@ -2103,6 +2315,38 @@
         }
       });
     });
+    // 5. Gestion de la modale Mentions Légales & RGPD
+    var legalDialog = document.getElementById('modal-legal');
+    var openLegalBtn = document.getElementById('btn-open-legal');
+    var closeLegalBtn = document.getElementById('btn-close-legal');
+    var closeLegalBottomBtn = document.getElementById('btn-close-legal-bottom');
+
+    if (legalDialog && openLegalBtn) {
+      openLegalBtn.addEventListener('click', function() {
+        if (typeof legalDialog.showModal === 'function') {
+          legalDialog.showModal();
+        } else {
+          legalDialog.setAttribute('open', '');
+        }
+      });
+
+      function closeLegal() {
+        if (typeof legalDialog.close === 'function') {
+          legalDialog.close();
+        } else {
+          legalDialog.removeAttribute('open');
+        }
+      }
+
+      if (closeLegalBtn) closeLegalBtn.addEventListener('click', closeLegal);
+      if (closeLegalBottomBtn) closeLegalBottomBtn.addEventListener('click', closeLegal);
+
+      legalDialog.addEventListener('click', function(e) {
+        if (e.target === legalDialog) {
+          closeLegal();
+        }
+      });
+    }
   </script>
 </body>
 </html>
