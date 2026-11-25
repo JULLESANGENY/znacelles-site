@@ -45,3 +45,10 @@ Toujours valider le déploiement réel sur le site en production :
 curl -sL -A "Mozilla/5.0" "https://www.znacelles.fr/?cb=$(date +%s)" | grep -o -E ".{0,40}47 mètres.{0,40}"
 ```
 
+## 5. Consultation des Statistiques en Direct (Visites, Appels, Devis)
+Lorsque l'utilisateur demande combien il a de visites, d'appels ou de demandes de devis sur le site, exécuter immédiatement :
+```bash
+bash scripts/stats.sh
+```
+Ce script interroge les compteurs anonymes Abacus (`znacelles-fr-33`) pour afficher les statistiques du jour, du mois en cours et le total cumulé.
+

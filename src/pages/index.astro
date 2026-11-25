@@ -2312,6 +2312,9 @@
       submitButton.textContent = 'Envoi en cours… ⏳';
 
       try {
+        if (typeof window.znTrackEvent === 'function') {
+          window.znTrackEvent('devis');
+        }
         var formData = new FormData(formEl);
         var response = await fetch('https://formsubmit.co/ajax/z.nacelles@gmail.com', {
           method: 'POST',
@@ -2383,6 +2386,53 @@
         }
       });
     }
+
+    // 6. Compteurs statistiques anonymes (sans cookie, RGPD)
+    (function() {
+      var NS = 'znacelles-fr-33';
+      var API = 'https://abacus.jasoncameron.dev/hit/' + NS + '/';
+      var now = new Date();
+      var yyyy = now.getFullYear();
+      var mm = String(now.getMonth() + 1).padStart(2, '0');
+      var dd = String(now.getDate()).padStart(2, '0');
+      var monthKey = yyyy + '_' + mm;
+      var dayKey = yyyy + '_' + mm + '_' + dd;
+
+      function ping(key) {
+        try {
+          fetch(API + key, { method: 'GET', keepalive: true, mode: 'cors' }).catch(function() {});
+        } catch (e) {}
+      }
+
+      function trackEvent(type) {
+        var host = window.location.hostname;
+        if (host !== 'www.znacelles.fr' && host !== 'znacelles.fr') return;
+        if (navigator.webdriver) return;
+        ping(type + '_total');
+        ping(type + '_' + monthKey);
+        ping(type + '_' + dayKey);
+      }
+
+      window.znTrackEvent = trackEvent;
+
+      // Comptage page vue & visiteur unique (session)
+      trackEvent('visites');
+      try {
+        if (!sessionStorage.getItem('zn_session_counted')) {
+          sessionStorage.setItem('zn_session_counted', '1');
+          trackEvent('visiteurs');
+        }
+      } catch (e) {
+        trackEvent('visiteurs');
+      }
+
+      // Comptage des clics sur le numéro de téléphone 07 67 34 16 55
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(telLink) {
+        telLink.addEventListener('click', function() {
+          trackEvent('appels');
+        });
+      });
+    })();
   </script>
 </body>
 </html>
